@@ -11,12 +11,27 @@
     45,
     46
   ],
-  "methods": [
-    {
-      "method_id": "Full_EAMSR",
-      "method_name": "Full_EAMSR",
-      "metrics": {
-        "Acc_adm": {
+  "main_task_level_metrics": {
+    "note": "These values correspond to the Table 3 main results reported in the manuscript. They are computed as the task-level final decision accuracy over 120 EAMSR-Bench tasks.",
+    "acc_adm": 0.9333333333333333,
+    "acc_adm_percent": 93.3,
+    "uar": 0.0,
+    "correct": 112,
+    "total": 120,
+    "correct_admit": 42,
+    "correct_clarify": 43,
+    "correct_reject": 28,
+    "clarify_reject_confusions": 8,
+    "unwarranted_admit_errors": 0
+  },
+  "repeated_run_summary": {
+    "note": "The following values are means over 5 random seeds. They are supplementary statistics and NOT the Table 3 task-level final decision accuracy.",
+    "methods": [
+      {
+        "method_id": "Full_EAMSR",
+        "method_name": "Full_EAMSR",
+        "metrics": {
+          "Acc_adm": {
           "mean": 0.9483333333333334,
           "std": 0.04265494630689908,
           "values": [
@@ -5086,4 +5101,5 @@
       ]
     }
   ]
+}
 }

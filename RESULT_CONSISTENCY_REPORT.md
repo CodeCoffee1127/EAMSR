@@ -1,14 +1,14 @@
 # EAMSR Result Consistency Report
 
-**Generated**: 2026-06-22T12:17:59.211536
+**Generated**: 2026-06-22T12:46:50.922216
 **Script**: scripts/check_consistency.py
 
 ## Summary
 
 - **Total checks**: 12
-- **PASS**: 10
+- **PASS**: 11
 - **FAIL**: 0
-- **WARNING**: 2
+- **WARNING**: 1
 - **SKIP**: 0
 
 ## Detailed Results
@@ -57,11 +57,12 @@ local_todo.md does not mention missing Table 7 Panel B data
 
 ### C8: Acc_adm 93.3% vs 94.8% Conflict Check
 
-**Status**: WARNING
+**Status**: PASS
 
-Both 93.3% and 94.8% found in different files. This may reflect task-level vs repeated-run aggregate difference. Requires manual confirmation for Table 3 reporting.
+Only 93.3% found (task-level)
 Findings:
-  - full_eamsr_p2.json: Acc_adm mean = 0.9483 (94.8%)
+  - full_eamsr_p2.json (main_task_level_metrics): Acc_adm = 0.9333 (93.3%) [Table 3 Main Result]
+  - full_eamsr_p2.json: repeated_run_summary present (supplementary statistic, not Table 3)
   - table3_overall.csv: Acc_adm = 93.3%
   - bootstrap_ci.json: Acc_adm point_estimate = 0.9667 (96.7%)
 

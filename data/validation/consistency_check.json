@@ -200,7 +200,7 @@
       "check_id": "C5",
       "name": "Baseline Ordering",
       "status": "PASS",
-      "details": "Acc_adm: Direct_LLM < LLM_Backend < Rule_Gate < STL < Full_EAMSR. UAR: Full_EAMSR(0) < STL < Rule_Gate < LLM_Backend < Direct_LLM.",
+      "details": "Acc_adm: Direct_LLM < LLM_Backend < Rule_Gate < STL < Full_EAMSR. UAR: Full_EAMSR(0) < STL < Rule_Gate < LLM_Backend < Direct_LLM. Main task-level Acc_adm for Full_EAMSR is 93.3% (112/120).",
       "violations": [],
       "acc_ordering": [
         {
@@ -221,7 +221,8 @@
         },
         {
           "method": "Full_EAMSR",
-          "acc": 0.9483333333333334
+          "acc": 0.9333333333333333,
+          "note": "Task-level final decision accuracy (Table 3 main result)"
         }
       ],
       "uar_ordering": [

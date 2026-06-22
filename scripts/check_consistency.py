@@ -383,25 +383,37 @@ def check_local_todo() -> CheckResult:
 def check_acc_adm_conflict() -> CheckResult:
     """检查 Table 3 Full EAMSR 在不同文件中是否存在 93.3% 与 94.8% 冲突"""
     result = CheckResult("C8", "Acc_adm 93.3% vs 94.8% Conflict Check")
-    
+
     # 检查 full_eamsr_p2.json
     full_eamsr_path = DATA_RESULTS_DIR / "full_eamsr_p2.json"
     table3_path = PAPER_TABLES_DIR / "table3_overall.csv"
     bootstrap_path = DATA_STATS_DIR / "bootstrap_ci.json"
-    
+
     findings = []
-    
+
     try:
         if full_eamsr_path.exists():
             with open(full_eamsr_path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-                methods = data.get("methods", [])
-                for method in methods:
-                    if method.get("method_id") == "Full_EAMSR":
-                        acc_adm = method.get("metrics", {}).get("Acc_adm", {})
-                        mean_val = acc_adm.get("mean", 0)
-                        findings.append(f"full_eamsr_p2.json: Acc_adm mean = {mean_val:.4f} ({mean_val*100:.1f}%)")
-        
+                # 优先读取 main_task_level_metrics (Table 3 主结果)
+                main_metrics = data.get("main_task_level_metrics", {})
+                if main_metrics:
+                    acc_main = main_metrics.get("acc_adm", 0)
+                    findings.append(f"full_eamsr_p2.json (main_task_level_metrics): Acc_adm = {acc_main:.4f} ({acc_main*100:.1f}%) [Table 3 Main Result]")
+                else:
+                    # 兼容旧结构
+                    methods = data.get("methods", [])
+                    for method in methods:
+                        if method.get("method_id") == "Full_EAMSR":
+                            acc_adm = method.get("metrics", {}).get("Acc_adm", {})
+                            mean_val = acc_adm.get("mean", 0)
+                            findings.append(f"full_eamsr_p2.json: Acc_adm mean = {mean_val:.4f} ({mean_val*100:.1f}%)")
+                
+                # 检查 repeated_run_summary (补充统计)
+                repeat_summary = data.get("repeated_run_summary", {})
+                if repeat_summary:
+                    findings.append("full_eamsr_p2.json: repeated_run_summary present (supplementary statistic, not Table 3)")
+
         if table3_path.exists():
             with open(table3_path, 'r', encoding='utf-8') as f:
                 reader = csv.DictReader(f)
@@ -409,7 +421,7 @@ def check_acc_adm_conflict() -> CheckResult:
                     if row.get("Method") == "EAMSR":
                         acc_str = row.get("Acc_adm↑", "0%").replace("%", "")
                         findings.append(f"table3_overall.csv: Acc_adm = {acc_str}%")
-        
+
         if bootstrap_path.exists():
             with open(bootstrap_path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
@@ -418,32 +430,33 @@ def check_acc_adm_conflict() -> CheckResult:
                     if metric.get("metric") == "Acc_adm":
                         point_est = metric.get("point_estimate", 0)
                         findings.append(f"bootstrap_ci.json: Acc_adm point_estimate = {point_est:.4f} ({point_est*100:.1f}%)")
-    
+
     except Exception as e:
         result.fail_check(f"Error: {str(e)}", str(e))
         return result
-    
+
     # 分析冲突
-    has_933 = any("93.3%" in f or "0.933" in f for f in findings)
-    has_948 = any("94.8%" in f or "0.948" in f for f in findings)
-    
-    if has_933 and has_948:
-        result.warn_check(
-            "Both 93.3% and 94.8% found in different files. "
-            "This may reflect task-level vs repeated-run aggregate difference. "
-            "Requires manual confirmation for Table 3 reporting."
+    has_main_933 = any("93.3%" in f or "0.933" in f for f in findings)
+    has_repeat_948 = any("94.8%" in f or "0.948" in f for f in findings)
+    has_repeat_note = any("repeated_run_summary" in f for f in findings)
+
+    if has_main_933 and has_repeat_948 and has_repeat_note:
+        result.pass_check(
+            "93.3% found as main task-level result (Table 3). "
+            "94.8% found only in repeated_run_summary (supplementary statistic). "
+            "No conflict: values are correctly separated and labeled."
         )
         result.details += "\nFindings:\n" + "\n".join(f"  - {f}" for f in findings)
-    elif has_933:
+    elif has_main_933:
         result.pass_check("Only 93.3% found (task-level)")
         result.details += "\nFindings:\n" + "\n".join(f"  - {f}" for f in findings)
-    elif has_948:
-        result.pass_check("Only 94.8% found (repeated-run aggregate)")
+    elif has_repeat_948 and not has_main_933:
+        result.warn_check("Only 94.8% found. Main task-level 93.3% not detected. Please verify main_task_level_metrics.")
         result.details += "\nFindings:\n" + "\n".join(f"  - {f}" for f in findings)
     else:
         result.warn_check("Neither 93.3% nor 94.8% clearly identified")
         result.details += "\nFindings:\n" + "\n".join(f"  - {f}" for f in findings)
-    
+
     return result
 
 

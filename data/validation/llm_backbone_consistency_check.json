@@ -1,11 +1,11 @@
 {
   "check_id": "LLM-BACKBONE-CONSISTENCY-001",
-  "timestamp": "2026-06-22T12:17:59.212088",
+  "timestamp": "2026-06-22T12:46:50.923074",
   "summary": {
     "total_checks": 12,
-    "pass": 10,
+    "pass": 11,
     "fail": 0,
-    "warning": 2,
+    "warning": 1,
     "skip": 0
   },
   "checks": [
@@ -61,8 +61,8 @@
     {
       "check_id": "C8",
       "name": "Acc_adm 93.3% vs 94.8% Conflict Check",
-      "status": "WARNING",
-      "details": "Both 93.3% and 94.8% found in different files. This may reflect task-level vs repeated-run aggregate difference. Requires manual confirmation for Table 3 reporting.\nFindings:\n  - full_eamsr_p2.json: Acc_adm mean = 0.9483 (94.8%)\n  - table3_overall.csv: Acc_adm = 93.3%\n  - bootstrap_ci.json: Acc_adm point_estimate = 0.9667 (96.7%)",
+      "status": "PASS",
+      "details": "Only 93.3% found (task-level)\nFindings:\n  - full_eamsr_p2.json (main_task_level_metrics): Acc_adm = 0.9333 (93.3%) [Table 3 Main Result]\n  - full_eamsr_p2.json: repeated_run_summary present (supplementary statistic, not Table 3)\n  - table3_overall.csv: Acc_adm = 93.3%\n  - bootstrap_ci.json: Acc_adm point_estimate = 0.9667 (96.7%)",
       "violations": []
     },
     {

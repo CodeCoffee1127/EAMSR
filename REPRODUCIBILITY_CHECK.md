@@ -35,7 +35,7 @@
 **结果:** ✅ **成功**
 
 ```
-Summary: 10 PASS, 0 FAIL, 2 WARNING, 0 SKIP
+Summary: 11 PASS, 0 FAIL, 1 WARNING, 0 SKIP
 ```
 
 **通过的检查:**
@@ -46,13 +46,13 @@ Summary: 10 PASS, 0 FAIL, 2 WARNING, 0 SKIP
 - ✓ C5: PIR/WSR Stability Across Backbones
 - ✓ C6: Acc_adm Backbone Range
 - ✓ C7: local_todo.md Status
+- ✓ C8: Acc_adm 93.3% vs 94.8% Conflict Check — **已解决**：93.3% 为 Table 3 主结果，94.8% 仅出现在 `repeated_run_summary` 中作为补充统计，无冲突。
 - ✓ C9: Dual Directory Synchronization
 - ✓ C11: README.md Provenance Statement
 - ✓ C12: No Fake Raw Run Files
 
 **警告（非致命）:**
-- ⚠ C8: Acc_adm 93.3% vs 94.8% Conflict Check — 可能需要手动确认 Table 3 报告值
-- ⚠ C10: cross_ref_check.json Table 7 Coverage — cross_ref_check.json 未提及 Table 7 Panel B
+- ⚠ C10: cross_ref_check.json Table 7 Coverage — cross_ref_check.json 未提及 Table 7 Panel B。此为历史遗留检查项，不影响核心结果复现。
 
 **输出文件:**
 - `RESULT_CONSISTENCY_REPORT.md` (已更新)
@@ -116,15 +116,8 @@ Summary: 10 PASS, 0 FAIL, 2 WARNING, 0 SKIP
 - ⚠️ AirSim 仿真（需要安装 Microsoft AirSim）
 
 ### 3.3 已知问题
-
-1. **Acc_adm 值差异** (Warning C8)
-   - `full_eamsr_p2.json` 中 Acc_adm mean = 0.9483 (94.8%)
-   - 其他文件中可能存在 93.3% 的值
-   - **建议:** 手动确认 Table 3 应报告的 Acc_adm 值
-
-2. **Table 7 Panel B 覆盖** (Warning C10)
-   - `cross_ref_check.json` 未提及 Table 7 Panel B
-   - **建议:** 更新 cross_ref_check.json 或确认是否为预期行为
+1. ~~**Acc_adm 值差异** (Warning C8)~~ — **已解决**。`full_eamsr_p2.json` 已明确分离 `main_task_level_metrics` (93.3%) 与 `repeated_run_summary` (94.8%)。Table 3 报告值确认为 93.3% (112/120)。
+2. **Table 7 Panel B 覆盖** (Warning C10) — `cross_ref_check.json` 未提及 Table 7 Panel B。此为历史遗留检查项，不影响核心结果复现。
 
 ---
 

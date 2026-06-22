@@ -165,11 +165,15 @@ python scripts/update_llm_backbone_results.py
 
 ### EAMSR-Bench Dataset
 
-- **`data/raw/dataset_p2.jsonl`**: The core EAMSR-Bench P2 dataset containing 120 natural-language UAV task instructions across 6 application scenarios (search & rescue, environmental monitoring, infrastructure inspection, precision agriculture, emergency delivery, and scientific research).
+- **`data/raw/dataset_p2.jsonl`**: The core EAMSR-Bench P2 dataset containing 120 natural-language UAV task instructions across 6 application scenarios: S1 Powerline inspection, S2 Disaster-area search, S3 Campus delivery, S4 River monitoring, S5 Bridge inspection, and S6 Communication-limited task.
 
 - **`data/annotations/annotations_p2.json`**: Human annotations for the P2 dataset, including contract labels, witness requirements, and risk assessments.
 
 ### Experimental Results
+
+**Main Results (Table 3):** EAMSR achieves **93.3% admission accuracy** (112/120 tasks correct) and **0.0% unwarranted admission rate** across 120 tasks. Human labels: 42 ADMIT / 47 CLARIFY / 31 REJECT. Correct final decisions: 42 ADMIT, 43 CLARIFY, 28 REJECT. The remaining 8 errors occur only between CLARIFY and REJECT; no non-admissible sample is incorrectly output as ADMIT.
+
+**Note on 94.8%:** The value `0.9483` (94.8%) appearing in `full_eamsr_p2.json` under `repeated_run_summary` is a supplementary statistic representing the mean accuracy over 5 random seeds. It is **not** the Table 3 task-level final decision accuracy. The public repository explicitly separates `main_task_level_metrics` (93.3%) from `repeated_run_summary` (94.8%) to avoid ambiguity.
 
 - **`data/results/full_eamsr_p2.json`**: Results from the full EAMSR pipeline with all contract layers enabled.
 - **`data/results/baseline_p2.json`**: Baseline comparison results (without EAMSR contracts).
@@ -178,7 +182,7 @@ python scripts/update_llm_backbone_results.py
 ### Statistical Analyses
 
 - **`data/stats/bootstrap_ci.json`**: Bootstrap 95% confidence intervals for key metrics.
-- **`data/stats/ablation_confusion_matrices.json`**: Confusion matrices for abation studies.
+- **`data/stats/ablation_confusion_matrices.json`**: Confusion matrices for ablation studies.
 - **`data/stats/runtime_breakdown.json`**: Runtime breakdown by contract layer and operation type.
 
 ### Validation Records
