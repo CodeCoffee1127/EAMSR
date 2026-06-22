@@ -1,0 +1,27 @@
+{
+  "table_id": "Table 7",
+  "table_title": "Generalization and LLM Backbone Robustness",
+  "section": "4.6 Generalization and LLM Backbone Robustness",
+  "panels": {
+    "Panel_A": {
+      "panel_title": "Scenario generalization performance",
+      "metric_schema": ["Acc_adm", "UAR", "PIR", "CNR", "ATR"],
+      "data_source": "table7a_generalization.json"
+    },
+    "Panel_B": {
+      "panel_title": "LLM-backbone robustness",
+      "metric_schema": ["Acc_adm", "UAR", "UBR", "PIR", "WSR", "Decision_consistency"],
+      "data_source": "table7b_llm_backbone.json"
+    }
+  },
+  "note": "Panel A and Panel B use different metric schemas because they evaluate different aspects of robustness. Panel A focuses on scenario generalization with CNR and ATR. Panel B focuses on LLM backbone variation with UBR, PIR, WSR, and Decision consistency.",
+  "provenance": {
+    "panel_a_source": "recomputed from full_eamsr_p2.json",
+    "panel_b_source": "user_provided_supplemental_summary",
+    "panel_b_raw_trial_data_available": false
+  },
+  "warnings": [
+    "Panel B values are summary-level only and should not be treated as reconstructed raw trials.",
+    "See table7b_llm_backbone.json for detailed provenance and limitations."
+  ]
+}

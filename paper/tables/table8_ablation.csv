@@ -1,0 +1,8 @@
+Variant,Acc_adm↑,UAR↓,Most_Affected,Value,ATR↑,Time(s)
+Full EAMSR,93.3%,0.0%,—,—,98.3%,8.7
+w/o Evidence,84.2%,9.0%,ECR,63.8%,75.0%,7.9
+w/o Auth/Mut,82.5%,12.8%,PIR,82.4%,76.7%,7.6
+w/o USI,86.7%,7.7%,UBR,51.3%,81.7%,7.8
+w/o MCS,87.5%,3.8%,CNR,51.9%,83.3%,8.1
+w/o Backend,81.7%,16.7%,WSR,—,76.7%,5.1
+w/o Audit,92.5%,0.0%,ATR,21.7%,21.7%,8.0

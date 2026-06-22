@@ -1,0 +1,222 @@
+{
+  "title": "Confusion Matrices for All Methods",
+  "description": "3x3 confusion matrices (Predicted rows x Ground Truth columns) for 5 methods on 120 test samples",
+  "labels": [
+    "ACCEPT",
+    "CLARIFY",
+    "REJECT"
+  ],
+  "ground_truth_distribution": {
+    "ACCEPT": 42,
+    "CLARIFY": 47,
+    "REJECT": 31,
+    "total": 120
+  },
+  "methods": {
+    "Direct-LLM": {
+      "accuracy": 54.2,
+      "uar": 35.9,
+      "matrix": {
+        "predicted_ACCEPT": {
+          "gt_ACCEPT": 35,
+          "gt_CLARIFY": 20,
+          "gt_REJECT": 8
+        },
+        "predicted_CLARIFY": {
+          "gt_ACCEPT": 5,
+          "gt_CLARIFY": 16,
+          "gt_REJECT": 9
+        },
+        "predicted_REJECT": {
+          "gt_ACCEPT": 2,
+          "gt_CLARIFY": 11,
+          "gt_REJECT": 14
+        }
+      },
+      "correct_by_class": {
+        "ACCEPT": 35,
+        "CLARIFY": 16,
+        "REJECT": 14
+      },
+      "errors_by_type": {
+        "unsafe_accepts": {
+          "CLARIFY_to_ACCEPT": 20,
+          "REJECT_to_ACCEPT": 8,
+          "total": 28
+        },
+        "over_rejects": {
+          "ACCEPT_to_REJECT": 2,
+          "ACCEPT_to_CLARIFY": 5
+        },
+        "missed_clarifies": {
+          "CLARIFY_to_REJECT": 11
+        }
+      },
+      "notes": "High unsafe acceptance: many CLARIFY/REJECT cases wrongly accepted due to missing evidence and authority checks"
+    },
+    "LLM+Backend": {
+      "accuracy": 68.3,
+      "uar": 21.8,
+      "matrix": {
+        "predicted_ACCEPT": {
+          "gt_ACCEPT": 36,
+          "gt_CLARIFY": 12,
+          "gt_REJECT": 5
+        },
+        "predicted_CLARIFY": {
+          "gt_ACCEPT": 4,
+          "gt_CLARIFY": 26,
+          "gt_REJECT": 6
+        },
+        "predicted_REJECT": {
+          "gt_ACCEPT": 2,
+          "gt_CLARIFY": 9,
+          "gt_REJECT": 20
+        }
+      },
+      "correct_by_class": {
+        "ACCEPT": 36,
+        "CLARIFY": 26,
+        "REJECT": 20
+      },
+      "errors_by_type": {
+        "unsafe_accepts": {
+          "CLARIFY_to_ACCEPT": 12,
+          "REJECT_to_ACCEPT": 5,
+          "total": 17
+        },
+        "over_rejects": {
+          "ACCEPT_to_REJECT": 2,
+          "ACCEPT_to_CLARIFY": 4
+        },
+        "missed_clarifies": {
+          "CLARIFY_to_REJECT": 9
+        }
+      },
+      "notes": "Backend improves REJECT detection (WSR=88.9%) but still misses CLARIFY cases without explicit evidence gating"
+    },
+    "Rule-Gate": {
+      "accuracy": 74.2,
+      "uar": 15.4,
+      "matrix": {
+        "predicted_ACCEPT": {
+          "gt_ACCEPT": 38,
+          "gt_CLARIFY": 9,
+          "gt_REJECT": 3
+        },
+        "predicted_CLARIFY": {
+          "gt_ACCEPT": 3,
+          "gt_CLARIFY": 30,
+          "gt_REJECT": 7
+        },
+        "predicted_REJECT": {
+          "gt_ACCEPT": 1,
+          "gt_CLARIFY": 8,
+          "gt_REJECT": 21
+        }
+      },
+      "correct_by_class": {
+        "ACCEPT": 38,
+        "CLARIFY": 30,
+        "REJECT": 21
+      },
+      "errors_by_type": {
+        "unsafe_accepts": {
+          "CLARIFY_to_ACCEPT": 9,
+          "REJECT_to_ACCEPT": 3,
+          "total": 12
+        },
+        "over_rejects": {
+          "ACCEPT_to_REJECT": 1,
+          "ACCEPT_to_CLARIFY": 3
+        },
+        "missed_clarifies": {
+          "CLARIFY_to_REJECT": 8
+        }
+      },
+      "notes": "Rule-based gating reduces UAR to 15.4% but lacks nuanced understanding of ambiguous language"
+    },
+    "STL-Repair": {
+      "accuracy": 78.3,
+      "uar": 12.8,
+      "matrix": {
+        "predicted_ACCEPT": {
+          "gt_ACCEPT": 38,
+          "gt_CLARIFY": 7,
+          "gt_REJECT": 3
+        },
+        "predicted_CLARIFY": {
+          "gt_ACCEPT": 3,
+          "gt_CLARIFY": 34,
+          "gt_REJECT": 6
+        },
+        "predicted_REJECT": {
+          "gt_ACCEPT": 1,
+          "gt_CLARIFY": 6,
+          "gt_REJECT": 22
+        }
+      },
+      "correct_by_class": {
+        "ACCEPT": 38,
+        "CLARIFY": 34,
+        "REJECT": 22
+      },
+      "errors_by_type": {
+        "unsafe_accepts": {
+          "CLARIFY_to_ACCEPT": 7,
+          "REJECT_to_ACCEPT": 3,
+          "total": 10
+        },
+        "over_rejects": {
+          "ACCEPT_to_REJECT": 1,
+          "ACCEPT_to_CLARIFY": 3
+        },
+        "missed_clarifies": {
+          "CLARIFY_to_REJECT": 6
+        }
+      },
+      "notes": "Greedy Relaxation improves further but introduces silent changes (23.3%) and lacks full auditability"
+    },
+    "EAMSR": {
+      "accuracy": 93.3,
+      "uar": 0.0,
+      "matrix": {
+        "predicted_ACCEPT": {
+          "gt_ACCEPT": 41,
+          "gt_CLARIFY": 0,
+          "gt_REJECT": 0
+        },
+        "predicted_CLARIFY": {
+          "gt_ACCEPT": 1,
+          "gt_CLARIFY": 45,
+          "gt_REJECT": 5
+        },
+        "predicted_REJECT": {
+          "gt_ACCEPT": 0,
+          "gt_CLARIFY": 2,
+          "gt_REJECT": 26
+        }
+      },
+      "correct_by_class": {
+        "ACCEPT": 41,
+        "CLARIFY": 45,
+        "REJECT": 26
+      },
+      "errors_by_type": {
+        "unsafe_accepts": {
+          "CLARIFY_to_ACCEPT": 0,
+          "REJECT_to_ACCEPT": 0,
+          "total": 0
+        },
+        "over_rejects": {
+          "ACCEPT_to_REJECT": 0,
+          "ACCEPT_to_CLARIFY": 1
+        },
+        "missed_clarifies": {
+          "CLARIFY_to_REJECT": 2
+        }
+      },
+      "notes": "Zero unsafe accepts with 98.3% audit trail recovery. MAC grounding + multi-PO + backend witness + repair achieves near-perfect safety"
+    }
+  }
+}

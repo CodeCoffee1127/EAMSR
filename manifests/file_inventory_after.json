@@ -1,0 +1,100 @@
+{
+  "inventory_id": "EAMSR-INVENTORY-AFTER-001",
+  "timestamp": "2026-06-16T09:20:00",
+  "project_root": "d:\\EAMSR",
+  "description": "File inventory after project cleanup and LLM-backbone data completion",
+  "directories": {
+    "data": {
+      "raw": ["dataset_p2.jsonl"],
+      "annotations": ["annotations_p2.json"],
+      "results": ["full_eamsr_p2.json", "baseline_p2.json", "ablation_p2.json"],
+      "stats": ["bootstrap_ci.json", "ablation_confusion_matrices.json", "runtime_breakdown.json"],
+      "validation": ["l2_validation_p2.json", "consistency_check.json", "cross_ref_check.json", "llm_backbone_consistency_check.json"]
+    },
+    "src": {
+      "eamsr": ["__init__.py", "eamsr_schemas.py", "eamsr_schemas.json", "l1_simulator.py", "greedy_relaxation.py", "experiment_runner.py", "annotation_protocol_v1.md"]
+    },
+    "scripts": ["update_llm_backbone_results.py", "check_consistency.py", "p0_validation.py"],
+    "paper": {
+      "tables": [
+        "table2_dataset.csv",
+        "table3_overall.csv",
+        "table4a_grounding.csv",
+        "table4b_risk_handling.csv",
+        "table5_witness.csv",
+        "table6a_refinement.csv",
+        "table6b_repair.csv",
+        "table8_ablation.csv",
+        "table7a_generalization.csv",
+        "table7a_generalization.json",
+        "table7b_llm_backbone.csv",
+        "table7b_llm_backbone.json",
+        "table7b_llm_backbone_derived_stats.json",
+        "table7b_llm_backbone_count_reconstruction.json",
+        "table7b_llm_backbone_plot_data.json",
+        "table7_generalization_and_backbone.json",
+        "table7_generalization_and_backbone.md"
+      ],
+      "figures": [
+        "fig4_mac_flow.png",
+        "fig5_witness.png",
+        "fig6_uar_ablation.png",
+        "fig7_cases.png",
+        "fig8_confusion.png",
+        "figure_captions.md",
+        "fig_confusion.json",
+        "fig4_mac_flow.json",
+        "fig5_witness.json",
+        "fig6_uar_ablation.json",
+        "fig7_cases.json"
+      ],
+      "text": [
+        "text_4_2_overall.md",
+        "text_4_3_contract.md",
+        "text_4_4_witness.md",
+        "text_4_5_refinement.md",
+        "text_4_6_generalization.md",
+        "text_4_7_ablation.md",
+        "text_4_8_cases.md",
+        "text_4_9_threats.md",
+        "text_4_10_summary.md"
+      ]
+    },
+    "audit": ["audit_p2.json"],
+    "manifests": [
+      "p2_manifest.json",
+      "p2_final_manifest.json",
+      "p2_final_summary.md",
+      "p2_summary_report.md",
+      "file_inventory_before.json",
+      "file_inventory_after.json"
+    ],
+    "archive": {
+      "p0_validation": ["P0_MANIFEST.md", "p0_validation_report.json", "experiment_results_*.json (3 files)"],
+      "p1_legacy": ["dataset_p1.jsonl", "annotations_p1.json", "ablation_results.json", "baseline_results.json", "full_eamsr_results.json", "l1_simulator_p1.py", "p1_manifest.json", "p1_plan.md", "p1_summary_report.md"],
+      "process_logs": ["l1_calibration_report.json", "l2_validation_report.json", "uar_tuning_log.json", "p2_plan.md", "plan.md", "experiment_results_*.json (10 files)"],
+      "duplicate_project_copy": ["project/ directory contents (9 files)"]
+    }
+  },
+  "root_files": [
+    "README.md",
+    "requirements.txt",
+    ".gitignore",
+    "MANIFEST_BEFORE_CLEANUP.md",
+    "MANIFEST_AFTER_CLEANUP.md",
+    "PROJECT_CLEANUP_REPORT.md",
+    "RESULT_CONSISTENCY_REPORT.md",
+    "LLM_BACKBONE_COMPLETION_REPORT.md",
+    "local_todo.md"
+  ],
+  "notes": [
+    "All P1 legacy data moved to _archive/p1_legacy/",
+    "All P0 validation data moved to _archive/p0_validation/",
+    "Process logs moved to _archive/process_logs/",
+    "Duplicate project/ directory moved to _archive/duplicate_project_copy/",
+    "Python cache files (__pycache__/, *.pyc) deleted",
+    "Table 7 Panel B data completed with CSV, JSON, derived stats, count reconstruction, and plot data",
+    "Paper text sections 4.6, 4.9, and 4.10 updated with LLM-backbone robustness results",
+    "93.3% vs 94.8% Acc_adm conflict detected - requires manual confirmation"
+  ]
+}

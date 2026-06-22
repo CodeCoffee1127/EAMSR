@@ -1,0 +1,64 @@
+{
+  "manifest_id": "TABLE7B-DATA-MANIFEST-001",
+  "timestamp": "2026-06-16T09:20:00",
+  "description": "Table 7 Panel B (LLM-backbone robustness) data files manifest",
+  "files": [
+    {
+      "filename": "table7b_llm_backbone.csv",
+      "path": "paper/tables/table7b_llm_backbone.csv",
+      "description": "CSV table with LLM-backbone robustness results",
+      "format": "CSV",
+      "rows": 4,
+      "columns": ["LLM backbone", "Acc_adm", "UAR", "UBR", "PIR", "WSR", "Decision consistency"]
+    },
+    {
+      "filename": "table7b_llm_backbone.json",
+      "path": "paper/tables/table7b_llm_backbone.json",
+      "description": "JSON table with metadata, provenance, and consistency checks",
+      "format": "JSON",
+      "schema": ["table_id", "table_title", "section", "rows", "metrics", "provenance", "warnings", "consistency_checks"]
+    },
+    {
+      "filename": "table7b_llm_backbone_derived_stats.json",
+      "path": "paper/tables/table7b_llm_backbone_derived_stats.json",
+      "description": "Derived statistics: metric ranges, deltas relative to GPT-4-class, interpretation flags",
+      "format": "JSON",
+      "schema": ["metric_ranges", "relative_to_gpt4_class", "interpretation_flags"]
+    },
+    {
+      "filename": "table7b_llm_backbone_count_reconstruction.json",
+      "path": "paper/tables/table7b_llm_backbone_count_reconstruction.json",
+      "description": "Approximate count reconstruction from percentages and known denominators",
+      "format": "JSON",
+      "schema": ["assumptions", "reconstructed_counts", "limitations"]
+    },
+    {
+      "filename": "table7b_llm_backbone_plot_data.json",
+      "path": "paper/tables/table7b_llm_backbone_plot_data.json",
+      "description": "Figure-ready JSON for plotting",
+      "format": "JSON",
+      "schema": ["chart_suggestions", "data", "exclude_from_plot_by_default"]
+    },
+    {
+      "filename": "table7_generalization_and_backbone.json",
+      "path": "paper/tables/table7_generalization_and_backbone.json",
+      "description": "Combined Table 7 (Panel A + Panel B) metadata",
+      "format": "JSON",
+      "schema": ["table_id", "table_title", "section", "panels", "note", "provenance", "warnings"]
+    },
+    {
+      "filename": "table7_generalization_and_backbone.md",
+      "path": "paper/tables/table7_generalization_and_backbone.md",
+      "description": "Markdown rendering of Table 7 (Panel A + Panel B)",
+      "format": "Markdown"
+    }
+  ],
+  "provenance_status": "summary_level_supplemental",
+  "raw_trial_data_available": false,
+  "created_or_updated_by": "scripts/update_llm_backbone_results.py",
+  "warnings": [
+    "These values are summary-level only and should not be treated as reconstructed raw trials.",
+    "Per-sample multi-backbone raw runs are not available in this release.",
+    "See table7b_llm_backbone.json for detailed provenance."
+  ]
+}

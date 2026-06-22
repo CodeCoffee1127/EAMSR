@@ -1,0 +1,197 @@
+{
+  "title": "MAC Instantiation Pipeline Flow",
+  "description": "Flow from text anchors through clauses, evidence, PO modules to final decision",
+  "nodes": [
+    {
+      "id": "input",
+      "label": "Natural Language Instruction",
+      "type": "input",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "anchor",
+      "label": "Text Anchor Extraction",
+      "type": "processing",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "clause",
+      "label": "Clause Instantiation",
+      "type": "processing",
+      "x": 2,
+      "y": 0
+    },
+    {
+      "id": "evidence",
+      "label": "Evidence Coverage Check",
+      "type": "decision",
+      "x": 3,
+      "y": 0
+    },
+    {
+      "id": "risk_gate",
+      "label": "Risk Gate (T2-T6)",
+      "type": "processing",
+      "x": 4,
+      "y": 0
+    },
+    {
+      "id": "po_t2",
+      "label": "Evidence PO\n(T2: insufficient)",
+      "type": "PO",
+      "x": 5,
+      "y": -2
+    },
+    {
+      "id": "po_t3",
+      "label": "Authority/Mutability PO\n(T3: conflicting)",
+      "type": "PO",
+      "x": 5,
+      "y": -1
+    },
+    {
+      "id": "po_t4",
+      "label": "USI PO\n(T4: LLM assumption)",
+      "type": "PO",
+      "x": 5,
+      "y": 0
+    },
+    {
+      "id": "po_t5",
+      "label": "Backend PO\n(T5: infeasible)",
+      "type": "PO",
+      "x": 5,
+      "y": 1
+    },
+    {
+      "id": "po_t6",
+      "label": "MCS PO\n(T6: ambiguous)",
+      "type": "PO",
+      "x": 5,
+      "y": 2
+    },
+    {
+      "id": "backend",
+      "label": "Backend Witness",
+      "type": "processing",
+      "x": 6,
+      "y": 0
+    },
+    {
+      "id": "repair",
+      "label": "Greedy Relaxation / Refinement",
+      "type": "processing",
+      "x": 7,
+      "y": 0
+    },
+    {
+      "id": "audit",
+      "label": "Audit Trail",
+      "type": "processing",
+      "x": 8,
+      "y": 0
+    },
+    {
+      "id": "decision",
+      "label": "Final Decision\n(ACCEPT/CLARIFY/REJECT)",
+      "type": "output",
+      "x": 9,
+      "y": 0
+    }
+  ],
+  "edges": [
+    {
+      "from": "input",
+      "to": "anchor",
+      "label": "raw text"
+    },
+    {
+      "from": "anchor",
+      "to": "clause",
+      "label": "anchors\u2192clauses"
+    },
+    {
+      "from": "clause",
+      "to": "evidence",
+      "label": "clause set"
+    },
+    {
+      "from": "evidence",
+      "to": "risk_gate",
+      "label": "evidence OK / gap detected"
+    },
+    {
+      "from": "risk_gate",
+      "to": "po_t2",
+      "label": "T2"
+    },
+    {
+      "from": "risk_gate",
+      "to": "po_t3",
+      "label": "T3"
+    },
+    {
+      "from": "risk_gate",
+      "to": "po_t4",
+      "label": "T4"
+    },
+    {
+      "from": "risk_gate",
+      "to": "po_t5",
+      "label": "T5"
+    },
+    {
+      "from": "risk_gate",
+      "to": "po_t6",
+      "label": "T6"
+    },
+    {
+      "from": "po_t2",
+      "to": "backend",
+      "label": "CLARIFY/REJECT"
+    },
+    {
+      "from": "po_t3",
+      "to": "backend",
+      "label": "REJECT"
+    },
+    {
+      "from": "po_t4",
+      "to": "backend",
+      "label": "CLARIFY/REJECT"
+    },
+    {
+      "from": "po_t5",
+      "to": "backend",
+      "label": "refined plan"
+    },
+    {
+      "from": "po_t6",
+      "to": "backend",
+      "label": "screened"
+    },
+    {
+      "from": "backend",
+      "to": "repair",
+      "label": "witness result"
+    },
+    {
+      "from": "repair",
+      "to": "audit",
+      "label": "repaired spec"
+    },
+    {
+      "from": "audit",
+      "to": "decision",
+      "label": "traceable decision"
+    }
+  ],
+  "stats": {
+    "anchor_to_clause_precision": 90.9,
+    "anchor_to_clause_recall": 88.7,
+    "evidence_coverage": 95.2,
+    "pending_detection": 91.2
+  }
+}

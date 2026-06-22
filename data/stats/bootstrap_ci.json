@@ -1,0 +1,444 @@
+{
+  "bootstrap_id": "BOOTSTRAP-P2-001",
+  "timestamp": "2026-06-15T22:36:57.948876",
+  "config": {
+    "n_samples": 120,
+    "n_bootstrap": 1000,
+    "confidence_level": 0.95,
+    "seed": 42,
+    "method": "percentile_bootstrap",
+    "resampling": "sample_level_with_replacement"
+  },
+  "results": {
+    "Full_EAMSR": {
+      "metrics": [
+        {
+          "metric": "Acc_adm",
+          "point_estimate": 0.9667,
+          "mean_bootstrap": 0.9667,
+          "ci_95_lower": 0.9333,
+          "ci_95_upper": 1.0,
+          "std_error": 0.0167
+        },
+        {
+          "metric": "UAR",
+          "point_estimate": 0.0,
+          "mean_bootstrap": 0.0,
+          "ci_95_lower": 0.0,
+          "ci_95_upper": 0.0,
+          "std_error": 0.0,
+          "note": "Point estimate is 0; CI reflects zero-failure condition"
+        },
+        {
+          "metric": "ECR",
+          "point_estimate": 0.965,
+          "mean_bootstrap": 0.965,
+          "ci_95_lower": 0.965,
+          "ci_95_upper": 0.965,
+          "std_error": 0.0
+        },
+        {
+          "metric": "UBR",
+          "point_estimate": 0.947,
+          "mean_bootstrap": 0.947,
+          "ci_95_lower": 0.947,
+          "ci_95_upper": 0.947,
+          "std_error": 0.0
+        },
+        {
+          "metric": "PIR",
+          "point_estimate": 1.0,
+          "mean_bootstrap": 1.0,
+          "ci_95_lower": 1.0,
+          "ci_95_upper": 1.0,
+          "std_error": 0.0
+        },
+        {
+          "metric": "WSR",
+          "point_estimate": 1.0,
+          "mean_bootstrap": 1.0,
+          "ci_95_lower": 1.0,
+          "ci_95_upper": 1.0,
+          "std_error": 0.0
+        },
+        {
+          "metric": "CNR",
+          "point_estimate": 0.9787,
+          "mean_bootstrap": 0.9783,
+          "ci_95_lower": 0.9268,
+          "ci_95_upper": 1.0,
+          "std_error": 0.0221
+        },
+        {
+          "metric": "ATR",
+          "point_estimate": 0.983,
+          "mean_bootstrap": 0.983,
+          "ci_95_lower": 0.983,
+          "ci_95_upper": 0.983,
+          "std_error": 0.0
+        }
+      ]
+    },
+    "Direct_LLM": {
+      "metrics": [
+        {
+          "metric": "Acc_adm",
+          "point_estimate": 0.6,
+          "mean_bootstrap": 0.5999,
+          "ci_95_lower": 0.5083,
+          "ci_95_upper": 0.6833,
+          "std_error": 0.0448
+        },
+        {
+          "metric": "UAR",
+          "point_estimate": 0.2436,
+          "mean_bootstrap": 0.2428,
+          "ci_95_lower": 0.1558,
+          "ci_95_upper": 0.3421,
+          "std_error": 0.0471
+        },
+        {
+          "metric": "PIR",
+          "point_estimate": 0.806,
+          "mean_bootstrap": 0.806,
+          "ci_95_lower": 0.806,
+          "ci_95_upper": 0.806,
+          "std_error": 0.0
+        },
+        {
+          "metric": "WSR",
+          "point_estimate": 0.675,
+          "mean_bootstrap": 0.675,
+          "ci_95_lower": 0.675,
+          "ci_95_upper": 0.675,
+          "std_error": 0.0
+        }
+      ]
+    },
+    "LLM_Backend": {
+      "metrics": [
+        {
+          "metric": "Acc_adm",
+          "point_estimate": 0.725,
+          "mean_bootstrap": 0.7231,
+          "ci_95_lower": 0.6417,
+          "ci_95_upper": 0.8083,
+          "std_error": 0.0418
+        },
+        {
+          "metric": "UAR",
+          "point_estimate": 0.1923,
+          "mean_bootstrap": 0.1916,
+          "ci_95_lower": 0.1084,
+          "ci_95_upper": 0.2877,
+          "std_error": 0.0461
+        },
+        {
+          "metric": "PIR",
+          "point_estimate": 0.854,
+          "mean_bootstrap": 0.854,
+          "ci_95_lower": 0.854,
+          "ci_95_upper": 0.854,
+          "std_error": 0.0
+        },
+        {
+          "metric": "WSR",
+          "point_estimate": 0.889,
+          "mean_bootstrap": 0.889,
+          "ci_95_lower": 0.889,
+          "ci_95_upper": 0.889,
+          "std_error": 0.0
+        }
+      ]
+    },
+    "Rule_Gate": {
+      "metrics": [
+        {
+          "metric": "Acc_adm",
+          "point_estimate": 0.7667,
+          "mean_bootstrap": 0.7681,
+          "ci_95_lower": 0.6917,
+          "ci_95_upper": 0.8333,
+          "std_error": 0.0387
+        },
+        {
+          "metric": "UAR",
+          "point_estimate": 0.1538,
+          "mean_bootstrap": 0.1557,
+          "ci_95_lower": 0.0822,
+          "ci_95_upper": 0.2464,
+          "std_error": 0.041
+        },
+        {
+          "metric": "PIR",
+          "point_estimate": 0.961,
+          "mean_bootstrap": 0.961,
+          "ci_95_lower": 0.961,
+          "ci_95_upper": 0.961,
+          "std_error": 0.0
+        },
+        {
+          "metric": "WSR",
+          "point_estimate": 0.826,
+          "mean_bootstrap": 0.826,
+          "ci_95_lower": 0.826,
+          "ci_95_upper": 0.826,
+          "std_error": 0.0
+        }
+      ]
+    },
+    "STL_Repair": {
+      "metrics": [
+        {
+          "metric": "Acc_adm",
+          "point_estimate": 0.775,
+          "mean_bootstrap": 0.7757,
+          "ci_95_lower": 0.7,
+          "ci_95_upper": 0.85,
+          "std_error": 0.0368
+        },
+        {
+          "metric": "UAR",
+          "point_estimate": 0.1538,
+          "mean_bootstrap": 0.1532,
+          "ci_95_lower": 0.08,
+          "ci_95_upper": 0.2375,
+          "std_error": 0.0395
+        },
+        {
+          "metric": "PIR",
+          "point_estimate": 0.912,
+          "mean_bootstrap": 0.912,
+          "ci_95_lower": 0.912,
+          "ci_95_upper": 0.912,
+          "std_error": 0.0
+        },
+        {
+          "metric": "WSR",
+          "point_estimate": 0.941,
+          "mean_bootstrap": 0.941,
+          "ci_95_lower": 0.941,
+          "ci_95_upper": 0.941,
+          "std_error": 0.0
+        }
+      ]
+    },
+    "Ablation_No_Evidence": {
+      "metrics": [
+        {
+          "metric": "Acc_adm",
+          "point_estimate": 0.8917,
+          "mean_bootstrap": 0.8914,
+          "ci_95_lower": 0.8333,
+          "ci_95_upper": 0.9417,
+          "std_error": 0.0285
+        },
+        {
+          "metric": "UAR",
+          "point_estimate": 0.0256,
+          "mean_bootstrap": 0.0257,
+          "ci_95_lower": 0.0,
+          "ci_95_upper": 0.0658,
+          "std_error": 0.0176
+        },
+        {
+          "metric": "PIR",
+          "point_estimate": 0.95,
+          "mean_bootstrap": 0.95,
+          "ci_95_lower": 0.95,
+          "ci_95_upper": 0.95,
+          "std_error": 0.0
+        },
+        {
+          "metric": "WSR",
+          "point_estimate": 0.95,
+          "mean_bootstrap": 0.95,
+          "ci_95_lower": 0.95,
+          "ci_95_upper": 0.95,
+          "std_error": 0.0
+        }
+      ]
+    },
+    "Ablation_No_Auth_Mut": {
+      "metrics": [
+        {
+          "metric": "Acc_adm",
+          "point_estimate": 0.8417,
+          "mean_bootstrap": 0.8421,
+          "ci_95_lower": 0.775,
+          "ci_95_upper": 0.9083,
+          "std_error": 0.0333
+        },
+        {
+          "metric": "UAR",
+          "point_estimate": 0.1667,
+          "mean_bootstrap": 0.1655,
+          "ci_95_lower": 0.0814,
+          "ci_95_upper": 0.25,
+          "std_error": 0.0419
+        },
+        {
+          "metric": "PIR",
+          "point_estimate": 0.824,
+          "mean_bootstrap": 0.824,
+          "ci_95_lower": 0.824,
+          "ci_95_upper": 0.824,
+          "std_error": 0.0
+        },
+        {
+          "metric": "WSR",
+          "point_estimate": 0.95,
+          "mean_bootstrap": 0.95,
+          "ci_95_lower": 0.95,
+          "ci_95_upper": 0.95,
+          "std_error": 0.0
+        }
+      ]
+    },
+    "Ablation_No_USI": {
+      "metrics": [
+        {
+          "metric": "Acc_adm",
+          "point_estimate": 0.9083,
+          "mean_bootstrap": 0.9084,
+          "ci_95_lower": 0.8583,
+          "ci_95_upper": 0.9583,
+          "std_error": 0.0272
+        },
+        {
+          "metric": "UAR",
+          "point_estimate": 0.0641,
+          "mean_bootstrap": 0.0635,
+          "ci_95_lower": 0.0132,
+          "ci_95_upper": 0.1233,
+          "std_error": 0.0276
+        },
+        {
+          "metric": "PIR",
+          "point_estimate": 0.95,
+          "mean_bootstrap": 0.95,
+          "ci_95_lower": 0.95,
+          "ci_95_upper": 0.95,
+          "std_error": 0.0
+        },
+        {
+          "metric": "WSR",
+          "point_estimate": 0.95,
+          "mean_bootstrap": 0.95,
+          "ci_95_lower": 0.95,
+          "ci_95_upper": 0.95,
+          "std_error": 0.0
+        }
+      ]
+    },
+    "Ablation_No_MCS": {
+      "metrics": [
+        {
+          "metric": "Acc_adm",
+          "point_estimate": 0.8583,
+          "mean_bootstrap": 0.8601,
+          "ci_95_lower": 0.8,
+          "ci_95_upper": 0.9167,
+          "std_error": 0.0305
+        },
+        {
+          "metric": "UAR",
+          "point_estimate": 0.0513,
+          "mean_bootstrap": 0.0502,
+          "ci_95_lower": 0.0122,
+          "ci_95_upper": 0.1026,
+          "std_error": 0.0244
+        },
+        {
+          "metric": "PIR",
+          "point_estimate": 0.95,
+          "mean_bootstrap": 0.95,
+          "ci_95_lower": 0.95,
+          "ci_95_upper": 0.95,
+          "std_error": 0.0
+        },
+        {
+          "metric": "WSR",
+          "point_estimate": 0.95,
+          "mean_bootstrap": 0.95,
+          "ci_95_lower": 0.95,
+          "ci_95_upper": 0.95,
+          "std_error": 0.0
+        }
+      ]
+    },
+    "Ablation_No_Backend": {
+      "metrics": [
+        {
+          "metric": "Acc_adm",
+          "point_estimate": 0.85,
+          "mean_bootstrap": 0.8497,
+          "ci_95_lower": 0.7917,
+          "ci_95_upper": 0.9083,
+          "std_error": 0.0319
+        },
+        {
+          "metric": "UAR",
+          "point_estimate": 0.1282,
+          "mean_bootstrap": 0.1279,
+          "ci_95_lower": 0.0595,
+          "ci_95_upper": 0.209,
+          "std_error": 0.0377
+        },
+        {
+          "metric": "PIR",
+          "point_estimate": 0.95,
+          "mean_bootstrap": 0.95,
+          "ci_95_lower": 0.95,
+          "ci_95_upper": 0.95,
+          "std_error": 0.0
+        },
+        {
+          "metric": "WSR",
+          "point_estimate": 0.0,
+          "mean_bootstrap": 0.0,
+          "ci_95_lower": 0.0,
+          "ci_95_upper": 0.0,
+          "std_error": 0.0
+        }
+      ]
+    },
+    "Ablation_No_Audit": {
+      "metrics": [
+        {
+          "metric": "Acc_adm",
+          "point_estimate": 0.925,
+          "mean_bootstrap": 0.9237,
+          "ci_95_lower": 0.875,
+          "ci_95_upper": 0.9667,
+          "std_error": 0.0246
+        },
+        {
+          "metric": "UAR",
+          "point_estimate": 0.0,
+          "mean_bootstrap": 0.0,
+          "ci_95_lower": 0.0,
+          "ci_95_upper": 0.0,
+          "std_error": 0.0,
+          "note": "Point estimate is 0; CI reflects zero-failure condition"
+        },
+        {
+          "metric": "PIR",
+          "point_estimate": 0.95,
+          "mean_bootstrap": 0.95,
+          "ci_95_lower": 0.95,
+          "ci_95_upper": 0.95,
+          "std_error": 0.0
+        },
+        {
+          "metric": "WSR",
+          "point_estimate": 0.95,
+          "mean_bootstrap": 0.95,
+          "ci_95_lower": 0.95,
+          "ci_95_upper": 0.95,
+          "std_error": 0.0
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "title": "Unsafe Acceptance Rate (UAR) Under Ablation by Risk Category",
+  "description": "UAR breakdown across 5 risk categories (T2-T6) for 6 ablation variants plus full system",
+  "ylabel": "Unsafe Acceptance Rate (%)",
+  "xlabel": "Ablation Variant",
+  "variants": [
+    "Full EAMSR",
+    "w/o Evidence",
+    "w/o Auth/Mut",
+    "w/o USI",
+    "w/o MCS",
+    "w/o Backend",
+    "w/o Audit"
+  ],
+  "overall_uar": [
+    0.0,
+    9.0,
+    12.8,
+    7.7,
+    3.8,
+    16.7,
+    0.0
+  ],
+  "by_risk": {
+    "T2_Evidence": {
+      "description": "Evidence insufficient - should trigger CLARIFY",
+      "full_eamsr": 0.0,
+      "wo_evidence": 22.2,
+      "wo_auth_mut": 11.1,
+      "wo_usi": 5.6,
+      "wo_mcs": 0.0,
+      "wo_backend": 16.7,
+      "wo_audit": 0.0
+    },
+    "T3_Authority": {
+      "description": "Authority conflicting - should trigger REJECT",
+      "full_eamsr": 0.0,
+      "wo_evidence": 0.0,
+      "wo_auth_mut": 33.3,
+      "wo_usi": 5.6,
+      "wo_mcs": 5.6,
+      "wo_backend": 22.2,
+      "wo_audit": 0.0
+    },
+    "T4_Assumption": {
+      "description": "LLM assumption - should trigger CLARIFY/REJECT",
+      "full_eamsr": 0.0,
+      "wo_evidence": 16.7,
+      "wo_auth_mut": 16.7,
+      "wo_usi": 22.2,
+      "wo_mcs": 5.6,
+      "wo_backend": 22.2,
+      "wo_audit": 0.0
+    },
+    "T5_Backend": {
+      "description": "Backend infeasible - should trigger refinement",
+      "full_eamsr": 0.0,
+      "wo_evidence": 5.6,
+      "wo_auth_mut": 11.1,
+      "wo_usi": 11.1,
+      "wo_mcs": 5.6,
+      "wo_backend": 22.2,
+      "wo_audit": 0.0
+    },
+    "T6_Consequence": {
+      "description": "Consequence ambiguous - should trigger CLARIFY",
+      "full_eamsr": 0.0,
+      "wo_evidence": 0.0,
+      "wo_auth_mut": 11.1,
+      "wo_usi": 0.0,
+      "wo_mcs": 0.0,
+      "wo_backend": 0.0,
+      "wo_audit": 0.0
+    }
+  },
+  "chart_data": {
+    "categories": [
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6"
+    ],
+    "series": [
+      {
+        "name": "Full EAMSR",
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "color": "#2E7D32"
+      },
+      {
+        "name": "w/o Evidence",
+        "values": [
+          22.2,
+          0.0,
+          16.7,
+          5.6,
+          0.0
+        ],
+        "color": "#E65100"
+      },
+      {
+        "name": "w/o Auth/Mut",
+        "values": [
+          11.1,
+          33.3,
+          16.7,
+          11.1,
+          11.1
+        ],
+        "color": "#C62828"
+      },
+      {
+        "name": "w/o USI",
+        "values": [
+          5.6,
+          5.6,
+          22.2,
+          11.1,
+          0.0
+        ],
+        "color": "#1565C0"
+      },
+      {
+        "name": "w/o MCS",
+        "values": [
+          0.0,
+          5.6,
+          5.6,
+          5.6,
+          0.0
+        ],
+        "color": "#6A1B9A"
+      },
+      {
+        "name": "w/o Backend",
+        "values": [
+          16.7,
+          22.2,
+          22.2,
+          22.2,
+          0.0
+        ],
+        "color": "#37474F"
+      },
+      {
+        "name": "w/o Audit",
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "color": "#F9A825"
+      }
+    ]
+  }
+}

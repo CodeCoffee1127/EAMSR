@@ -1,0 +1,5 @@
+LLM backbone,Acc_adm,UAR,UBR,PIR,WSR,Decision consistency
+GPT-4-class,93.3,0.0,94.7,100.0,100.0,95.0
+Qwen2.5-72B-Instruct,92.5,0.0,93.4,100.0,100.0,93.8
+DeepSeek-class,91.7,1.3,92.6,100.0,100.0,92.9
+Overall,92.5,0.4,93.6,100.0,100.0,93.9

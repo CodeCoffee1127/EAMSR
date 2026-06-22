@@ -1,0 +1,129 @@
+{
+  "generation_time": "2026-06-22 12:18:11",
+  "round": 6,
+  "table3": {
+    "methods": [
+      "Direct-LLM",
+      "LLM+Backend",
+      "Rule-Gate",
+      "Greedy Relaxation",
+      "EAMSR"
+    ],
+    "metrics": {
+      "Direct-LLM": {
+        "Acc_adm": 54.2,
+        "UAR": 35.9,
+        "ECR": 61.4,
+        "UBR": 28.2,
+        "PIR": 80.6,
+        "WSR": 67.5,
+        "CNR": 31.1,
+        "ATR": 12.5
+      },
+      "LLM+Backend": {
+        "Acc_adm": 68.3,
+        "UAR": 21.8,
+        "ECR": 66.7,
+        "UBR": 35.9,
+        "PIR": 85.4,
+        "WSR": 88.9,
+        "CNR": 42.2,
+        "ATR": 25.0
+      },
+      "Rule-Gate": {
+        "Acc_adm": 74.2,
+        "UAR": 15.4,
+        "ECR": 72.8,
+        "UBR": 41.0,
+        "PIR": 96.1,
+        "WSR": 82.6,
+        "CNR": 50.0,
+        "ATR": 48.3
+      },
+      "Greedy Relaxation": {
+        "Acc_adm": 78.3,
+        "UAR": 12.8,
+        "ECR": 70.2,
+        "UBR": 47.4,
+        "PIR": 91.2,
+        "WSR": 94.1,
+        "CNR": 56.7,
+        "ATR": 52.5
+      },
+      "EAMSR": {
+        "Acc_adm": 93.3,
+        "UAR": 0.0,
+        "ECR": 96.5,
+        "UBR": 94.7,
+        "PIR": 100.0,
+        "WSR": 100.0,
+        "CNR": 88.9,
+        "ATR": 98.3
+      }
+    }
+  },
+  "table5": {
+    "scenarios": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6"
+    ],
+    "energy_margin": [
+      14.8,
+      10.6,
+      12.3,
+      15.1,
+      8.9,
+      9.7
+    ],
+    "time_margin": [
+      46.2,
+      31.5,
+      38.7,
+      52.4,
+      24.8,
+      28.3
+    ],
+    "overall_energy": 11.9,
+    "overall_time": 37.0
+  },
+  "table8": {
+    "display_labels": [
+      "w/o Backend",
+      "w/o Authority",
+      "w/o Evidence",
+      "w/o USI",
+      "w/o MCS",
+      "w/o Audit",
+      "Full EAMSR"
+    ],
+    "display_uar": [
+      16.7,
+      12.8,
+      9.0,
+      7.7,
+      3.8,
+      0.0,
+      0.0
+    ],
+    "display_time": [
+      5.1,
+      7.6,
+      7.9,
+      7.8,
+      8.1,
+      8.0,
+      8.7
+    ]
+  },
+  "runtime_breakdown": {
+    "LLM": 4.1,
+    "PO": 1.6,
+    "BW": 2.1,
+    "MCS": 0.9
+  },
+  "design_notes": "Round 6: Journal-level aesthetic optimization - improved labels, colors, spacing"
+}

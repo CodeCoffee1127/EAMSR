@@ -1,0 +1,6 @@
+Risk,Dominant_PO,Handling_Rate↑,Correct
+T2,Evidence PO,83.3%,18/18
+T3,Authority/Mutability PO,94.4%,17/18
+T4,USI PO,88.9%,13/18
+T5,Backend PO + refinement,83.3%,18/18
+T6,Mission-consequence screening,88.9%,16/18

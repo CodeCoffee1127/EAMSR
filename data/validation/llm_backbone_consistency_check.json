@@ -1,0 +1,97 @@
+{
+  "check_id": "LLM-BACKBONE-CONSISTENCY-001",
+  "timestamp": "2026-06-22T12:17:59.212088",
+  "summary": {
+    "total_checks": 12,
+    "pass": 10,
+    "fail": 0,
+    "warning": 2,
+    "skip": 0
+  },
+  "checks": [
+    {
+      "check_id": "C1",
+      "name": "Table 7 Panel B CSV/JSON Consistency",
+      "status": "PASS",
+      "details": "CSV and JSON values are consistent",
+      "violations": []
+    },
+    {
+      "check_id": "C2",
+      "name": "Table 7 Panel B vs Paper Text Consistency",
+      "status": "PASS",
+      "details": "Key values are mentioned in paper text",
+      "violations": []
+    },
+    {
+      "check_id": "C3",
+      "name": "Overall vs Full EAMSR Distinction",
+      "status": "PASS",
+      "details": "Provenance correctly indicates summary-level data",
+      "violations": []
+    },
+    {
+      "check_id": "C4",
+      "name": "UAR Value Consistency",
+      "status": "PASS",
+      "details": "UAR values are consistent with expectations",
+      "violations": []
+    },
+    {
+      "check_id": "C5",
+      "name": "PIR/WSR Stability Across Backbones",
+      "status": "PASS",
+      "details": "PIR and WSR are 100.0% across all backbones",
+      "violations": []
+    },
+    {
+      "check_id": "C6",
+      "name": "Acc_adm Backbone Range",
+      "status": "PASS",
+      "details": "Acc_adm range is 1.6 percentage points (expected ~1.6)",
+      "violations": []
+    },
+    {
+      "check_id": "C7",
+      "name": "local_todo.md Status",
+      "status": "PASS",
+      "details": "local_todo.md does not mention missing Table 7 Panel B data",
+      "violations": []
+    },
+    {
+      "check_id": "C8",
+      "name": "Acc_adm 93.3% vs 94.8% Conflict Check",
+      "status": "WARNING",
+      "details": "Both 93.3% and 94.8% found in different files. This may reflect task-level vs repeated-run aggregate difference. Requires manual confirmation for Table 3 reporting.\nFindings:\n  - full_eamsr_p2.json: Acc_adm mean = 0.9483 (94.8%)\n  - table3_overall.csv: Acc_adm = 93.3%\n  - bootstrap_ci.json: Acc_adm point_estimate = 0.9667 (96.7%)",
+      "violations": []
+    },
+    {
+      "check_id": "C9",
+      "name": "Dual Directory Synchronization",
+      "status": "PASS",
+      "details": "paper_data/ directory does not exist (no sync needed)",
+      "violations": []
+    },
+    {
+      "check_id": "C10",
+      "name": "cross_ref_check.json Table 7 Coverage",
+      "status": "WARNING",
+      "details": "cross_ref_check.json does not mention Table 7 Panel B",
+      "violations": []
+    },
+    {
+      "check_id": "C11",
+      "name": "README.md Provenance Statement",
+      "status": "PASS",
+      "details": "README.md mentions Table 7 Panel B / LLM-backbone",
+      "violations": []
+    },
+    {
+      "check_id": "C12",
+      "name": "No Fake Raw Run Files",
+      "status": "PASS",
+      "details": "No fake raw run files detected",
+      "violations": []
+    }
+  ]
+}

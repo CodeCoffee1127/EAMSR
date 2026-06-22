@@ -1,0 +1,949 @@
+{
+  "inventory_id": "EAMSR-INVENTORY-BEFORE-001",
+  "timestamp": "2026-06-16T00:00:00",
+  "project_root": "d:\\EAMSR",
+  "total_files": 100,
+  "total_size_bytes": 5834174,
+  "files": [
+    {
+      "relative_path": "ablation_confusion_matrices.json",
+      "file_name": "ablation_confusion_matrices.json",
+      "extension": ".json",
+      "size_bytes": 4411,
+      "category": "derived_result",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "P2 消融混淆矩阵，核心统计材料"
+    },
+    {
+      "relative_path": "ablation_p2.json",
+      "file_name": "ablation_p2.json",
+      "extension": ".json",
+      "size_bytes": 1129930,
+      "category": "raw_result",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "P2 消融实验原始结果"
+    },
+    {
+      "relative_path": "ablation_results.json",
+      "file_name": "ablation_results.json",
+      "extension": ".json",
+      "size_bytes": 18497,
+      "category": "derived_result",
+      "importance_level": "medium",
+      "suggested_action": "move_to_archive",
+      "reason": "P1 消融结果，已被 P2 替代"
+    },
+    {
+      "relative_path": "annotation_protocol_v1.md",
+      "file_name": "annotation_protocol_v1.md",
+      "extension": ".md",
+      "size_bytes": 35559,
+      "category": "core_data",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "标注协议 v1，核心文档"
+    },
+    {
+      "relative_path": "annotations_p1.json",
+      "file_name": "annotations_p1.json",
+      "extension": ".json",
+      "size_bytes": 53107,
+      "category": "annotation",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "P1 标注数据，已被 P2 替代"
+    },
+    {
+      "relative_path": "annotations_p2.json",
+      "file_name": "annotations_p2.json",
+      "extension": ".json",
+      "size_bytes": 161622,
+      "category": "annotation",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "P2 标注数据，核心资产"
+    },
+    {
+      "relative_path": "audit_p2.json",
+      "file_name": "audit_p2.json",
+      "extension": ".json",
+      "size_bytes": 49325,
+      "category": "audit",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "P2 审计追踪，核心资产"
+    },
+    {
+      "relative_path": "baseline_p2.json",
+      "file_name": "baseline_p2.json",
+      "extension": ".json",
+      "size_bytes": 754063,
+      "category": "raw_result",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "P2 Baseline 原始结果"
+    },
+    {
+      "relative_path": "baseline_results.json",
+      "file_name": "baseline_results.json",
+      "extension": ".json",
+      "size_bytes": 13020,
+      "category": "derived_result",
+      "importance_level": "medium",
+      "suggested_action": "move_to_archive",
+      "reason": "P1 Baseline 结果，已被 P2 替代"
+    },
+    {
+      "relative_path": "bootstrap_ci.json",
+      "file_name": "bootstrap_ci.json",
+      "extension": ".json",
+      "size_bytes": 11197,
+      "category": "validation",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "Bootstrap 95% CI，核心统计材料"
+    },
+    {
+      "relative_path": "consistency_check.json",
+      "file_name": "consistency_check.json",
+      "extension": ".json",
+      "size_bytes": 8098,
+      "category": "validation",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "一致性检查报告"
+    },
+    {
+      "relative_path": "cross_ref_check.json",
+      "file_name": "cross_ref_check.json",
+      "extension": ".json",
+      "size_bytes": 11921,
+      "category": "validation",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "交叉引用检查"
+    },
+    {
+      "relative_path": "dataset_p1.jsonl",
+      "file_name": "dataset_p1.jsonl",
+      "extension": ".jsonl",
+      "size_bytes": 94999,
+      "category": "p1_legacy",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "P1 数据集，已被 P2 替代"
+    },
+    {
+      "relative_path": "dataset_p2.jsonl",
+      "file_name": "dataset_p2.jsonl",
+      "extension": ".jsonl",
+      "size_bytes": 582847,
+      "category": "core_data",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "P2 数据集，核心资产"
+    },
+    {
+      "relative_path": "eamsr_schemas.json",
+      "file_name": "eamsr_schemas.json",
+      "extension": ".json",
+      "size_bytes": 32093,
+      "category": "source_code",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "EAMSR 数据 schema 定义"
+    },
+    {
+      "relative_path": "eamsr_schemas.py",
+      "file_name": "eamsr_schemas.py",
+      "extension": ".py",
+      "size_bytes": 28746,
+      "category": "source_code",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "EAMSR schema Python 实现"
+    },
+    {
+      "relative_path": "experiment_runner.py",
+      "file_name": "experiment_runner.py",
+      "extension": ".py",
+      "size_bytes": 62273,
+      "category": "source_code",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "实验运行器核心脚本"
+    },
+    {
+      "relative_path": "full_eamsr_p2.json",
+      "file_name": "full_eamsr_p2.json",
+      "extension": ".json",
+      "size_bytes": 188324,
+      "category": "raw_result",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "P2 Full EAMSR 原始结果"
+    },
+    {
+      "relative_path": "full_eamsr_results.json",
+      "file_name": "full_eamsr_results.json",
+      "extension": ".json",
+      "size_bytes": 14097,
+      "category": "derived_result",
+      "importance_level": "medium",
+      "suggested_action": "move_to_archive",
+      "reason": "P1 Full EAMSR 结果，已被 P2 替代"
+    },
+    {
+      "relative_path": "greedy_relaxation.py",
+      "file_name": "greedy_relaxation.py",
+      "extension": ".py",
+      "size_bytes": 56137,
+      "category": "source_code",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "贪婪松弛算法实现"
+    },
+    {
+      "relative_path": "l1_calibration_report.json",
+      "file_name": "l1_calibration_report.json",
+      "extension": ".json",
+      "size_bytes": 3841,
+      "category": "process_log",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "L1 校准报告，过程性文件"
+    },
+    {
+      "relative_path": "l1_simulator.py",
+      "file_name": "l1_simulator.py",
+      "extension": ".py",
+      "size_bytes": 55180,
+      "category": "source_code",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "L1 模拟器核心脚本"
+    },
+    {
+      "relative_path": "l1_simulator_p1.py",
+      "file_name": "l1_simulator_p1.py",
+      "extension": ".py",
+      "size_bytes": 51043,
+      "category": "p1_legacy",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "P1 版本 L1 模拟器，已被替代"
+    },
+    {
+      "relative_path": "l2_validation_p2.json",
+      "file_name": "l2_validation_p2.json",
+      "extension": ".json",
+      "size_bytes": 5726,
+      "category": "validation",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "P2 L2 验证结果"
+    },
+    {
+      "relative_path": "l2_validation_report.json",
+      "file_name": "l2_validation_report.json",
+      "extension": ".json",
+      "size_bytes": 6978,
+      "category": "process_log",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "L2 验证报告，过程性文件"
+    },
+    {
+      "relative_path": "local_todo.md",
+      "file_name": "local_todo.md",
+      "extension": ".md",
+      "size_bytes": 4604,
+      "category": "process_log",
+      "importance_level": "medium",
+      "suggested_action": "keep",
+      "reason": "本地待办清单，需要更新"
+    },
+    {
+      "relative_path": "P0_MANIFEST.md",
+      "file_name": "P0_MANIFEST.md",
+      "extension": ".md",
+      "size_bytes": 10874,
+      "category": "p0_validation",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "P0 manifest，过程性文件"
+    },
+    {
+      "relative_path": "p0_validation.py",
+      "file_name": "p0_validation.py",
+      "extension": ".py",
+      "size_bytes": 56310,
+      "category": "source_code",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "P0 验证脚本"
+    },
+    {
+      "relative_path": "p0_validation_report.json",
+      "file_name": "p0_validation_report.json",
+      "extension": ".json",
+      "size_bytes": 4389,
+      "category": "p0_validation",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "P0 验证报告"
+    },
+    {
+      "relative_path": "p1_manifest.json",
+      "file_name": "p1_manifest.json",
+      "extension": ".json",
+      "size_bytes": 2637,
+      "category": "p1_legacy",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "P1 manifest"
+    },
+    {
+      "relative_path": "p1_plan.md",
+      "file_name": "p1_plan.md",
+      "extension": ".md",
+      "size_bytes": 2296,
+      "category": "process_log",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "P1 计划文档"
+    },
+    {
+      "relative_path": "p1_summary_report.md",
+      "file_name": "p1_summary_report.md",
+      "extension": ".md",
+      "size_bytes": 10574,
+      "category": "p1_legacy",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "P1 总结报告"
+    },
+    {
+      "relative_path": "p2_final_manifest.json",
+      "file_name": "p2_final_manifest.json",
+      "extension": ".json",
+      "size_bytes": 1190,
+      "category": "manifest",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "P2 最终 manifest"
+    },
+    {
+      "relative_path": "p2_final_summary.md",
+      "file_name": "p2_final_summary.md",
+      "extension": ".md",
+      "size_bytes": 3594,
+      "category": "manifest",
+      "importance_level": "medium",
+      "suggested_action": "keep",
+      "reason": "P2 最终总结"
+    },
+    {
+      "relative_path": "p2_manifest.json",
+      "file_name": "p2_manifest.json",
+      "extension": ".json",
+      "size_bytes": 6654,
+      "category": "manifest",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "P2 manifest"
+    },
+    {
+      "relative_path": "p2_plan.md",
+      "file_name": "p2_plan.md",
+      "extension": ".md",
+      "size_bytes": 1663,
+      "category": "process_log",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "P2 计划文档"
+    },
+    {
+      "relative_path": "p2_summary_report.md",
+      "file_name": "p2_summary_report.md",
+      "extension": ".md",
+      "size_bytes": 4860,
+      "category": "manifest",
+      "importance_level": "medium",
+      "suggested_action": "keep",
+      "reason": "P2 总结报告"
+    },
+    {
+      "relative_path": "plan.md",
+      "file_name": "plan.md",
+      "extension": ".md",
+      "size_bytes": 1573,
+      "category": "process_log",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "早期计划文档"
+    },
+    {
+      "relative_path": "runtime_breakdown.json",
+      "file_name": "runtime_breakdown.json",
+      "extension": ".json",
+      "size_bytes": 1076,
+      "category": "derived_result",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "运行时分项统计"
+    },
+    {
+      "relative_path": "uar_tuning_log.json",
+      "file_name": "uar_tuning_log.json",
+      "extension": ".json",
+      "size_bytes": 17543,
+      "category": "process_log",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "UAR 调参日志"
+    },
+    {
+      "relative_path": "__pycache__\\l1_simulator.cpython-312.pyc",
+      "file_name": "l1_simulator.cpython-312.pyc",
+      "extension": ".pyc",
+      "size_bytes": 50234,
+      "category": "cache",
+      "importance_level": "low",
+      "suggested_action": "delete_cache",
+      "reason": "Python 编译缓存"
+    },
+    {
+      "relative_path": "paper_data\\fig_confusion.json",
+      "file_name": "fig_confusion.json",
+      "extension": ".json",
+      "size_bytes": 5480,
+      "category": "paper_table",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文图表数据 - 混淆矩阵"
+    },
+    {
+      "relative_path": "paper_data\\fig4_mac_flow.json",
+      "file_name": "fig4_mac_flow.json",
+      "extension": ".json",
+      "size_bytes": 3664,
+      "category": "paper_figure",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文图表数据 - Fig4"
+    },
+    {
+      "relative_path": "paper_data\\fig5_witness.json",
+      "file_name": "fig5_witness.json",
+      "extension": ".json",
+      "size_bytes": 2890,
+      "category": "paper_figure",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文图表数据 - Fig5"
+    },
+    {
+      "relative_path": "paper_data\\fig6_uar_ablation.json",
+      "file_name": "fig6_uar_ablation.json",
+      "extension": ".json",
+      "size_bytes": 3246,
+      "category": "paper_figure",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文图表数据 - Fig6"
+    },
+    {
+      "relative_path": "paper_data\\fig7_cases.json",
+      "file_name": "fig7_cases.json",
+      "extension": ".json",
+      "size_bytes": 10221,
+      "category": "paper_figure",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文图表数据 - Fig7"
+    },
+    {
+      "relative_path": "paper_data\\table2_dataset.csv",
+      "file_name": "table2_dataset.csv",
+      "extension": ".csv",
+      "size_bytes": 309,
+      "category": "paper_table",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文表格 - Table 2"
+    },
+    {
+      "relative_path": "paper_data\\table3_overall.csv",
+      "file_name": "table3_overall.csv",
+      "extension": ".csv",
+      "size_bytes": 360,
+      "category": "paper_table",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文表格 - Table 3"
+    },
+    {
+      "relative_path": "paper_data\\table4a_grounding.csv",
+      "file_name": "table4a_grounding.csv",
+      "extension": ".csv",
+      "size_bytes": 251,
+      "category": "paper_table",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文表格 - Table 4a"
+    },
+    {
+      "relative_path": "paper_data\\table4b_risk_handling.csv",
+      "file_name": "table4b_risk_handling.csv",
+      "extension": ".csv",
+      "size_bytes": 220,
+      "category": "paper_table",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文表格 - Table 4b"
+    },
+    {
+      "relative_path": "paper_data\\table5_witness.csv",
+      "file_name": "table5_witness.csv",
+      "extension": ".csv",
+      "size_bytes": 281,
+      "category": "paper_table",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文表格 - Table 5"
+    },
+    {
+      "relative_path": "paper_data\\table6a_refinement.csv",
+      "file_name": "table6a_refinement.csv",
+      "extension": ".csv",
+      "size_bytes": 229,
+      "category": "paper_table",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文表格 - Table 6a"
+    },
+    {
+      "relative_path": "paper_data\\table6b_repair.csv",
+      "file_name": "table6b_repair.csv",
+      "extension": ".csv",
+      "size_bytes": 165,
+      "category": "paper_table",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文表格 - Table 6b"
+    },
+    {
+      "relative_path": "paper_data\\table8_ablation.csv",
+      "file_name": "table8_ablation.csv",
+      "extension": ".csv",
+      "size_bytes": 359,
+      "category": "paper_table",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文表格 - Table 8"
+    },
+    {
+      "relative_path": "paper_figures\\fig4_mac_flow.png",
+      "file_name": "fig4_mac_flow.png",
+      "extension": ".png",
+      "size_bytes": 284626,
+      "category": "paper_figure",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文图表 - Fig4"
+    },
+    {
+      "relative_path": "paper_figures\\fig5_witness.png",
+      "file_name": "fig5_witness.png",
+      "extension": ".png",
+      "size_bytes": 265289,
+      "category": "paper_figure",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文图表 - Fig5"
+    },
+    {
+      "relative_path": "paper_figures\\fig6_uar_ablation.png",
+      "file_name": "fig6_uar_ablation.png",
+      "extension": ".png",
+      "size_bytes": 199534,
+      "category": "paper_figure",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文图表 - Fig6"
+    },
+    {
+      "relative_path": "paper_figures\\fig7_cases.png",
+      "file_name": "fig7_cases.png",
+      "extension": ".png",
+      "size_bytes": 670323,
+      "category": "paper_figure",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文图表 - Fig7"
+    },
+    {
+      "relative_path": "paper_figures\\fig8_confusion.png",
+      "file_name": "fig8_confusion.png",
+      "extension": ".png",
+      "size_bytes": 199917,
+      "category": "paper_figure",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文图表 - Fig8"
+    },
+    {
+      "relative_path": "paper_figures\\figure_captions.md",
+      "file_name": "figure_captions.md",
+      "extension": ".md",
+      "size_bytes": 2353,
+      "category": "paper_figure",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "图注说明"
+    },
+    {
+      "relative_path": "paper_text\\text_4_10_summary.md",
+      "file_name": "text_4_10_summary.md",
+      "extension": ".md",
+      "size_bytes": 4261,
+      "category": "paper_text",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文 4.10 节"
+    },
+    {
+      "relative_path": "paper_text\\text_4_2_overall.md",
+      "file_name": "text_4_2_overall.md",
+      "extension": ".md",
+      "size_bytes": 4237,
+      "category": "paper_text",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文 4.2 节"
+    },
+    {
+      "relative_path": "paper_text\\text_4_3_contract.md",
+      "file_name": "text_4_3_contract.md",
+      "extension": ".md",
+      "size_bytes": 4702,
+      "category": "paper_text",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文 4.3 节"
+    },
+    {
+      "relative_path": "paper_text\\text_4_4_witness.md",
+      "file_name": "text_4_4_witness.md",
+      "extension": ".md",
+      "size_bytes": 3210,
+      "category": "paper_text",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文 4.4 节"
+    },
+    {
+      "relative_path": "paper_text\\text_4_5_refinement.md",
+      "file_name": "text_4_5_refinement.md",
+      "extension": ".md",
+      "size_bytes": 5362,
+      "category": "paper_text",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文 4.5 节"
+    },
+    {
+      "relative_path": "paper_text\\text_4_6_generalization.md",
+      "file_name": "text_4_6_generalization.md",
+      "extension": ".md",
+      "size_bytes": 3474,
+      "category": "paper_text",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文 4.6 节 - 需要更新"
+    },
+    {
+      "relative_path": "paper_text\\text_4_7_ablation.md",
+      "file_name": "text_4_7_ablation.md",
+      "extension": ".md",
+      "size_bytes": 5551,
+      "category": "paper_text",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文 4.7 节"
+    },
+    {
+      "relative_path": "paper_text\\text_4_8_cases.md",
+      "file_name": "text_4_8_cases.md",
+      "extension": ".md",
+      "size_bytes": 5931,
+      "category": "paper_text",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文 4.8 节"
+    },
+    {
+      "relative_path": "paper_text\\text_4_9_threats.md",
+      "file_name": "text_4_9_threats.md",
+      "extension": ".md",
+      "size_bytes": 4151,
+      "category": "paper_text",
+      "importance_level": "high",
+      "suggested_action": "keep",
+      "reason": "论文 4.9 节 - 需要更新"
+    },
+    {
+      "relative_path": "project\\.gitkeep",
+      "file_name": ".gitkeep",
+      "extension": ".gitkeep",
+      "size_bytes": 0,
+      "category": "duplicate",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "project/ 目录为重复副本"
+    },
+    {
+      "relative_path": "project\\annotation_protocol_v1.md",
+      "file_name": "annotation_protocol_v1.md",
+      "extension": ".md",
+      "size_bytes": 35559,
+      "category": "duplicate",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "与根目录重复"
+    },
+    {
+      "relative_path": "project\\eamsr_schemas.json",
+      "file_name": "eamsr_schemas.json",
+      "extension": ".json",
+      "size_bytes": 32093,
+      "category": "duplicate",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "与根目录重复"
+    },
+    {
+      "relative_path": "project\\eamsr_schemas.py",
+      "file_name": "eamsr_schemas.py",
+      "extension": ".py",
+      "size_bytes": 28746,
+      "category": "duplicate",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "与根目录重复"
+    },
+    {
+      "relative_path": "project\\experiment_runner.py",
+      "file_name": "experiment_runner.py",
+      "extension": ".py",
+      "size_bytes": 62273,
+      "category": "duplicate",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "与根目录重复"
+    },
+    {
+      "relative_path": "project\\greedy_relaxation.py",
+      "file_name": "greedy_relaxation.py",
+      "extension": ".py",
+      "size_bytes": 56137,
+      "category": "duplicate",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "与根目录重复"
+    },
+    {
+      "relative_path": "project\\l1_simulator.py",
+      "file_name": "l1_simulator.py",
+      "extension": ".py",
+      "size_bytes": 51043,
+      "category": "duplicate",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "与根目录重复（版本较旧）"
+    },
+    {
+      "relative_path": "project\\p0_validation.py",
+      "file_name": "p0_validation.py",
+      "extension": ".py",
+      "size_bytes": 56310,
+      "category": "duplicate",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "与根目录重复"
+    },
+    {
+      "relative_path": "project\\p0_validation_report.json",
+      "file_name": "p0_validation_report.json",
+      "extension": ".json",
+      "size_bytes": 4389,
+      "category": "duplicate",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "与根目录重复"
+    },
+    {
+      "relative_path": "project\\__pycache__\\eamsr_schemas.cpython-312.pyc",
+      "file_name": "eamsr_schemas.cpython-312.pyc",
+      "extension": ".pyc",
+      "size_bytes": 32837,
+      "category": "cache",
+      "importance_level": "low",
+      "suggested_action": "delete_cache",
+      "reason": "Python 编译缓存"
+    },
+    {
+      "relative_path": "project\\__pycache__\\experiment_runner.cpython-312.pyc",
+      "file_name": "experiment_runner.cpython-312.pyc",
+      "extension": ".pyc",
+      "size_bytes": 59621,
+      "category": "cache",
+      "importance_level": "low",
+      "suggested_action": "delete_cache",
+      "reason": "Python 编译缓存"
+    },
+    {
+      "relative_path": "project\\__pycache__\\greedy_relaxation.cpython-312.pyc",
+      "file_name": "greedy_relaxation.cpython-312.pyc",
+      "extension": ".pyc",
+      "size_bytes": 42283,
+      "category": "cache",
+      "importance_level": "low",
+      "suggested_action": "delete_cache",
+      "reason": "Python 编译缓存"
+    },
+    {
+      "relative_path": "project\\__pycache__\\l1_simulator.cpython-312.pyc",
+      "file_name": "l1_simulator.cpython-312.pyc",
+      "extension": ".pyc",
+      "size_bytes": 44894,
+      "category": "cache",
+      "importance_level": "low",
+      "suggested_action": "delete_cache",
+      "reason": "Python 编译缓存"
+    },
+    {
+      "relative_path": "project\\results\\p0_validation\\experiment_results_2026-06-15T10_01_54.688021+00_00.json",
+      "file_name": "experiment_results_2026-06-15T10_01_54.688021+00_00.json",
+      "extension": ".json",
+      "size_bytes": 43248,
+      "category": "p0_validation",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "P0 验证实验结果"
+    },
+    {
+      "relative_path": "project\\results\\p0_validation\\experiment_results_2026-06-15T10_07_21.502202+00_00.json",
+      "file_name": "experiment_results_2026-06-15T10_07_21.502202+00_00.json",
+      "extension": ".json",
+      "size_bytes": 43218,
+      "category": "p0_validation",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "P0 验证实验结果"
+    },
+    {
+      "relative_path": "project\\results\\p0_validation\\experiment_results_2026-06-15T10_08_52.091717+00_00.json",
+      "file_name": "experiment_results_2026-06-15T10_08_52.091717+00_00.json",
+      "extension": ".json",
+      "size_bytes": 43212,
+      "category": "p0_validation",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "P0 验证实验结果"
+    },
+    {
+      "relative_path": "project\\results\\test_ablation\\experiment_results_2026-06-15T09_53_12.322024+00_00.json",
+      "file_name": "experiment_results_2026-06-15T09_53_12.322024+00_00.json",
+      "extension": ".json",
+      "size_bytes": 149774,
+      "category": "process_log",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "测试实验结果"
+    },
+    {
+      "relative_path": "project\\results\\test_ablation\\experiment_results_2026-06-15T09_53_43.098868+00_00.json",
+      "file_name": "experiment_results_2026-06-15T09_53_43.098868+00_00.json",
+      "extension": ".json",
+      "size_bytes": 149778,
+      "category": "process_log",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "测试实验结果"
+    },
+    {
+      "relative_path": "project\\results\\test_ablation\\experiment_results_2026-06-15T09_53_50.971926+00_00.json",
+      "file_name": "experiment_results_2026-06-15T09_53_50.971926+00_00.json",
+      "extension": ".json",
+      "size_bytes": 149748,
+      "category": "process_log",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "测试实验结果"
+    },
+    {
+      "relative_path": "project\\results\\test_all\\experiment_results_2026-06-15T09_53_51.083098+00_00.json",
+      "file_name": "experiment_results_2026-06-15T09_53_51.083098+00_00.json",
+      "extension": ".json",
+      "size_bytes": 272069,
+      "category": "process_log",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "测试实验结果"
+    },
+    {
+      "relative_path": "project\\results\\test_baseline\\experiment_results_2026-06-15T09_53_12.249317+00_00.json",
+      "file_name": "experiment_results_2026-06-15T09_53_12.249317+00_00.json",
+      "extension": ".json",
+      "size_bytes": 124618,
+      "category": "process_log",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "测试实验结果"
+    },
+    {
+      "relative_path": "project\\results\\test_baseline\\experiment_results_2026-06-15T09_53_43.026531+00_00.json",
+      "file_name": "experiment_results_2026-06-15T09_53_43.026531+00_00.json",
+      "extension": ".json",
+      "size_bytes": 124629,
+      "category": "process_log",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "测试实验结果"
+    },
+    {
+      "relative_path": "project\\results\\test_baseline\\experiment_results_2026-06-15T09_53_50.900198+00_00.json",
+      "file_name": "experiment_results_2026-06-15T09_53_50.900198+00_00.json",
+      "extension": ".json",
+      "size_bytes": 124608,
+      "category": "process_log",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "测试实验结果"
+    },
+    {
+      "relative_path": "project\\results\\test_budget\\experiment_results_2026-06-15T09_53_50.990440+00_00.json",
+      "file_name": "experiment_results_2026-06-15T09_53_50.990440+00_00.json",
+      "extension": ".json",
+      "size_bytes": 26977,
+      "category": "process_log",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "测试实验结果"
+    },
+    {
+      "relative_path": "project\\results\\test_save\\experiment_results_2026-06-15T09_53_50.900198+00_00.json",
+      "file_name": "experiment_results_2026-06-15T09_53_50.900198+00_00.json",
+      "extension": ".json",
+      "size_bytes": 124608,
+      "category": "process_log",
+      "importance_level": "low",
+      "suggested_action": "move_to_archive",
+      "reason": "测试实验结果"
+    }
+  ]
+}

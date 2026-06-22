@@ -1,0 +1,73 @@
+{
+  "metric_ranges": {
+    "Acc_adm": {
+      "min": 91.7,
+      "max": 93.3,
+      "range": 1.6,
+      "best_backbone": "GPT-4-class",
+      "worst_backbone": "DeepSeek-class"
+    },
+    "UAR": {
+      "min": 0.0,
+      "max": 1.3,
+      "range": 1.3,
+      "best_backbone": [
+        "GPT-4-class",
+        "Qwen2.5-72B-Instruct"
+      ],
+      "worst_backbone": "DeepSeek-class"
+    },
+    "UBR": {
+      "min": 92.6,
+      "max": 94.7,
+      "range": 2.1,
+      "best_backbone": "GPT-4-class",
+      "worst_backbone": "DeepSeek-class"
+    },
+    "PIR": {
+      "min": 100.0,
+      "max": 100.0,
+      "range": 0.0,
+      "best_backbone": "GPT-4-class",
+      "worst_backbone": "GPT-4-class"
+    },
+    "WSR": {
+      "min": 100.0,
+      "max": 100.0,
+      "range": 0.0,
+      "best_backbone": "GPT-4-class",
+      "worst_backbone": "GPT-4-class"
+    },
+    "Decision_consistency": {
+      "min": 92.9,
+      "max": 95.0,
+      "range": 2.1,
+      "best_backbone": "GPT-4-class",
+      "worst_backbone": "DeepSeek-class"
+    }
+  },
+  "relative_to_gpt4_class": {
+    "Qwen2.5-72B-Instruct": {
+      "Acc_adm_delta": -0.8,
+      "UAR_delta": 0.0,
+      "UBR_delta": -1.3,
+      "PIR_delta": 0.0,
+      "WSR_delta": 0.0,
+      "Decision_consistency_delta": -1.2
+    },
+    "DeepSeek-class": {
+      "Acc_adm_delta": -1.6,
+      "UAR_delta": 1.3,
+      "UBR_delta": -2.1,
+      "PIR_delta": 0.0,
+      "WSR_delta": 0.0,
+      "Decision_consistency_delta": -2.1
+    }
+  },
+  "interpretation_flags": {
+    "protected_invariant_stable_across_backbones": true,
+    "backend_witness_stable_across_backbones": true,
+    "unsafe_admission_observed_only_in_deepseek_class": true,
+    "maximum_accuracy_gap_percentage_points": 2.1
+  }
+}

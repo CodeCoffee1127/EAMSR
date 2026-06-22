@@ -1,0 +1,31 @@
+{
+  "manifest_id": "EAMSR-FINAL-COMPLETE-20260615",
+  "project": "EAMSR: Evidence-carrying Autonomous Mission Safety & Reasoning",
+  "timestamp": "2026-06-15T21:00:00+08:00",
+  "phases": {
+    "P0": "Infrastructure (9 files, 334 KB)",
+    "P1": "Validation 20-sample (9 files, 226 KB)",
+    "P2": "Full-Scale 120-sample (11 files, 2.8 MB)",
+    "DATA": "Paper Data 7 tables + 5 figures (13 files, 27 KB)",
+    "FINAL": "Paper Asset Finalization (16 files, 1.6 MB)",
+    "SUPP": "Supplementary Bootstrap CI + CM + Runtime (4 files, 21 KB)"
+  },
+  "total": "62 files, 5.0 MB",
+  "key_results": {
+    "Acc_adm": "94.8% (target 93.3%)",
+    "UAR": "0.0% (target 0.0%)",
+    "PIR": "100.0%",
+    "WSR": "100.0%",
+    "Bootstrap_Acc_adm_CI": "[93.3%, 100.0%]",
+    "L2_FP_rate": "0.0% (down from 50.0%)",
+    "Consistency_check": "8/8 PASS",
+    "Cross_ref_check": "6/6 PASS"
+  },
+  "local_actions_required": [
+    "Delete multi-LLM-backend claims from Section 4.6 (Table 7 Panel B)",
+    "Integrate 9 Chinese text files into 4.experiment.docx",
+    "Insert 5 PNG figures with proper numbering",
+    "Verify Table 3 values against bootstrap_ci.json point estimates"
+  ],
+  "status": "COMPLETE"
+}

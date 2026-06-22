@@ -1,0 +1,53 @@
+{
+  "assumptions": {
+    "samples_per_backbone": 120,
+    "non_accept_ground_truth_per_backbone": 78,
+    "backbones": 3,
+    "total_backbone_sample_evaluations": 360,
+    "total_non_accept_denominator": 234,
+    "note": "These denominators follow the EAMSR-Bench label distribution. Counts are reconstructed or approximated only where percentages align with known denominators."
+  },
+  "reconstructed_counts": [
+    {
+      "llm_backbone": "GPT-4-class",
+      "Acc_adm_percent": 93.3,
+      "approx_correct_decisions": 112,
+      "Acc_reconstruction_note": "93.3% is consistent with approximately 112/120.",
+      "UAR_percent": 0.0,
+      "approx_unsafe_accepts": 0,
+      "UAR_reconstruction_note": "0.0% is consistent with approximately 0/78."
+    },
+    {
+      "llm_backbone": "Qwen2.5-72B-Instruct",
+      "Acc_adm_percent": 92.5,
+      "approx_correct_decisions": 111,
+      "Acc_reconstruction_note": "92.5% is consistent with approximately 111/120.",
+      "UAR_percent": 0.0,
+      "approx_unsafe_accepts": 0,
+      "UAR_reconstruction_note": "0.0% is consistent with approximately 0/78."
+    },
+    {
+      "llm_backbone": "DeepSeek-class",
+      "Acc_adm_percent": 91.7,
+      "approx_correct_decisions": 110,
+      "Acc_reconstruction_note": "91.7% is consistent with approximately 110/120.",
+      "UAR_percent": 1.3,
+      "approx_unsafe_accepts": 1,
+      "UAR_reconstruction_note": "1.3% is consistent with approximately 1/78."
+    },
+    {
+      "llm_backbone": "Overall",
+      "Acc_adm_percent": 92.5,
+      "approx_correct_decisions": 333,
+      "Acc_reconstruction_note": "92.5% is consistent with approximately 333/360.",
+      "UAR_percent": 0.4,
+      "approx_unsafe_accepts": 1,
+      "UAR_reconstruction_note": "0.4% is consistent with approximately 1/234."
+    }
+  ],
+  "limitations": [
+    "These counts are reconstructed from rounded percentages and known benchmark denominators.",
+    "They are not a substitute for raw per-sample multi-backbone run records.",
+    "Decision consistency counts are not reconstructed unless the exact denominator is present in raw files."
+  ]
+}

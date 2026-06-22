@@ -1,0 +1,5 @@
+Language,Anchor_cov↑,Clause_prec↑,Clause_rec↑,Evidence_cov↑,Pending_det↑
+Explicit,97.8%,94.5%,92.4%,97.9%,95.0%
+Semi-structured,93.6%,90.8%,89.1%,95.1%,91.3%
+Ambiguous,88.9%,86.3%,84.7%,91.8%,88.6%
+Overall,93.4%,90.5%,88.7%,94.9%,91.6%

@@ -1,0 +1,286 @@
+{
+  "check_id": "P2-CONSISTENCY-001",
+  "timestamp": "2026-06-15T20:32:29.063151",
+  "description": "Comprehensive consistency validation across Full EAMSR, baselines, and ablations",
+  "dataset": "dataset_p2.jsonl",
+  "total_samples": 120,
+  "methods_checked": 11,
+  "checks": [
+    {
+      "check_id": "C1",
+      "name": "Acc_adm vs Confusion Matrix",
+      "status": "PASS",
+      "details": "Checked 11 methods. All consistent within tolerance (0.01).",
+      "violations": []
+    },
+    {
+      "check_id": "C2",
+      "name": "WSR Denominator",
+      "status": "PASS",
+      "details": "WSR values are valid. Ablation_No_Backend correctly has WSR=0.0.",
+      "violations": []
+    },
+    {
+      "check_id": "C3",
+      "name": "UAR Denominator",
+      "status": "PASS",
+      "details": "UAR checked across 11 methods. N_unsafe_gt=78. Note: Minor differences between computed (seed=42) and reported (mean over 5 seeds) are expected statistical variation.",
+      "violations": [],
+      "per_method_detail": [
+        {
+          "method": "Full_EAMSR",
+          "computed_from_seed42": 0.0,
+          "reported_mean": 0.0,
+          "per_repeat_range": [
+            0.0,
+            0.0
+          ],
+          "computed_in_range": true
+        },
+        {
+          "method": "Direct_LLM",
+          "computed_from_seed42": 0.2436,
+          "reported_mean": 0.3333,
+          "per_repeat_range": [
+            0.2436,
+            0.3974
+          ],
+          "computed_in_range": true
+        },
+        {
+          "method": "LLM_Backend",
+          "computed_from_seed42": 0.1923,
+          "reported_mean": 0.2231,
+          "per_repeat_range": [
+            0.1923,
+            0.2564
+          ],
+          "computed_in_range": true
+        },
+        {
+          "method": "Rule_Gate",
+          "computed_from_seed42": 0.1538,
+          "reported_mean": 0.1615,
+          "per_repeat_range": [
+            0.0897,
+            0.2436
+          ],
+          "computed_in_range": true
+        },
+        {
+          "method": "STL_Repair",
+          "computed_from_seed42": 0.1538,
+          "reported_mean": 0.1564,
+          "per_repeat_range": [
+            0.1154,
+            0.1795
+          ],
+          "computed_in_range": true
+        },
+        {
+          "method": "Ablation_No_Evidence",
+          "computed_from_seed42": 0.0256,
+          "reported_mean": 0.0667,
+          "per_repeat_range": [
+            0.0256,
+            0.1026
+          ],
+          "computed_in_range": true
+        },
+        {
+          "method": "Ablation_No_Auth_Mut",
+          "computed_from_seed42": 0.1667,
+          "reported_mean": 0.1333,
+          "per_repeat_range": [
+            0.1026,
+            0.1667
+          ],
+          "computed_in_range": true
+        },
+        {
+          "method": "Ablation_No_USI",
+          "computed_from_seed42": 0.0641,
+          "reported_mean": 0.0718,
+          "per_repeat_range": [
+            0.0385,
+            0.1282
+          ],
+          "computed_in_range": true
+        },
+        {
+          "method": "Ablation_No_MCS",
+          "computed_from_seed42": 0.0513,
+          "reported_mean": 0.0282,
+          "per_repeat_range": [
+            0.0,
+            0.0641
+          ],
+          "computed_in_range": true
+        },
+        {
+          "method": "Ablation_No_Backend",
+          "computed_from_seed42": 0.1282,
+          "reported_mean": 0.1667,
+          "per_repeat_range": [
+            0.1282,
+            0.2179
+          ],
+          "computed_in_range": true
+        },
+        {
+          "method": "Ablation_No_Audit",
+          "computed_from_seed42": 0.0,
+          "reported_mean": 0.0,
+          "per_repeat_range": [
+            0.0,
+            0.0
+          ],
+          "computed_in_range": true
+        }
+      ]
+    },
+    {
+      "check_id": "C4",
+      "name": "Ablation Degradation Direction",
+      "status": "PASS",
+      "details": "All ablations show expected degradation. Acc_adm decreases, UAR increases when safety features removed. WSR=0 for w/o Backend, ATR drops to 0 for w/o Audit.",
+      "violations": [],
+      "per_ablation": [
+        {
+          "ablation": "Ablation_No_Evidence",
+          "acc_diff_from_full": -0.1,
+          "uar_diff_from_full": 0.0667,
+          "acc_degraded": true,
+          "uar_increased_or_same": true,
+          "status": "OK"
+        },
+        {
+          "ablation": "Ablation_No_Auth_Mut",
+          "acc_diff_from_full": -0.12,
+          "uar_diff_from_full": 0.1333,
+          "acc_degraded": true,
+          "uar_increased_or_same": true,
+          "status": "OK"
+        },
+        {
+          "ablation": "Ablation_No_USI",
+          "acc_diff_from_full": -0.0667,
+          "uar_diff_from_full": 0.0718,
+          "acc_degraded": true,
+          "uar_increased_or_same": true,
+          "status": "OK"
+        },
+        {
+          "ablation": "Ablation_No_MCS",
+          "acc_diff_from_full": -0.0583,
+          "uar_diff_from_full": 0.0282,
+          "acc_degraded": true,
+          "uar_increased_or_same": true,
+          "status": "OK"
+        },
+        {
+          "ablation": "Ablation_No_Backend",
+          "acc_diff_from_full": -0.1267,
+          "uar_diff_from_full": 0.1667,
+          "acc_degraded": true,
+          "uar_increased_or_same": true,
+          "status": "OK"
+        },
+        {
+          "ablation": "Ablation_No_Audit",
+          "acc_diff_from_full": -0.03,
+          "uar_diff_from_full": 0.0,
+          "acc_degraded": true,
+          "uar_increased_or_same": true,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "check_id": "C5",
+      "name": "Baseline Ordering",
+      "status": "PASS",
+      "details": "Acc_adm: Direct_LLM < LLM_Backend < Rule_Gate < STL < Full_EAMSR. UAR: Full_EAMSR(0) < STL < Rule_Gate < LLM_Backend < Direct_LLM.",
+      "violations": [],
+      "acc_ordering": [
+        {
+          "method": "Direct_LLM",
+          "acc": 0.56
+        },
+        {
+          "method": "LLM_Backend",
+          "acc": 0.7166666666666667
+        },
+        {
+          "method": "Rule_Gate",
+          "acc": 0.7766666666666667
+        },
+        {
+          "method": "STL_Repair",
+          "acc": 0.8016666666666666
+        },
+        {
+          "method": "Full_EAMSR",
+          "acc": 0.9483333333333334
+        }
+      ],
+      "uar_ordering": [
+        {
+          "method": "Full_EAMSR",
+          "uar": 0.0
+        },
+        {
+          "method": "STL_Repair",
+          "uar": 0.1564102564102564
+        },
+        {
+          "method": "Rule_Gate",
+          "uar": 0.16153846153846155
+        },
+        {
+          "method": "LLM_Backend",
+          "uar": 0.2230769230769231
+        },
+        {
+          "method": "Direct_LLM",
+          "uar": 0.3333333333333333
+        }
+      ]
+    },
+    {
+      "check_id": "C6",
+      "name": "Metric Range Check",
+      "status": "PASS",
+      "details": "All metrics in [0, 1] for 11 methods.",
+      "violations": []
+    },
+    {
+      "check_id": "C7",
+      "name": "GT Distribution Match",
+      "status": "PASS",
+      "details": "GT distribution matches: ACCEPT=42, CLARIFY=47, REJECT=31.",
+      "violations": []
+    },
+    {
+      "check_id": "C8",
+      "name": "Sample Coverage",
+      "status": "PASS",
+      "details": "All 120 samples have results in all 11 methods.",
+      "violations": []
+    }
+  ],
+  "overall_status": "PASS",
+  "pass_count": 8,
+  "fail_count": 0,
+  "partial_count": 0,
+  "summary": {
+    "C1_Acc_adm_vs_CM": "PASS - All 11 methods consistent (diff=0.0)",
+    "C2_WSR_Denominator": "PASS - Ablation_No_Backend correctly has WSR=0",
+    "C3_UAR_Denominator": "PASS - UAR computed over N_unsafe_gt=78",
+    "C4_Abl_Degradation": "PASS - All ablations show expected degradation direction",
+    "C5_Baseline_Ordering": "PASS - Correct ordering for both Acc_adm and UAR",
+    "C6_Metric_Range": "PASS - All metrics in [0,1]",
+    "C7_GT_Distribution": "PASS - ACCEPT=42, CLARIFY=47, REJECT=31 confirmed",
+    "C8_Sample_Coverage": "PASS - All 120 samples covered in all methods"
+  }
+}

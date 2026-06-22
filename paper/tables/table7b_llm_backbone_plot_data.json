@@ -1,0 +1,58 @@
+{
+  "chart_suggestions": [
+    {
+      "figure_name": "llm_backbone_accuracy_uar",
+      "chart_type": "grouped_bar",
+      "x": "llm_backbone",
+      "y": [
+        "Acc_adm",
+        "UAR"
+      ],
+      "purpose": "Compare accuracy and unsafe admission across LLM backbones."
+    },
+    {
+      "figure_name": "llm_backbone_stability",
+      "chart_type": "line_or_grouped_bar",
+      "x": "llm_backbone",
+      "y": [
+        "UBR",
+        "PIR",
+        "WSR",
+        "Decision_consistency"
+      ],
+      "purpose": "Show that protected invariant retention and backend witness success remain stable."
+    }
+  ],
+  "data": [
+    {
+      "llm_backbone": "GPT-4-class",
+      "Acc_adm": 93.3,
+      "UAR": 0.0,
+      "UBR": 94.7,
+      "PIR": 100.0,
+      "WSR": 100.0,
+      "Decision_consistency": 95.0
+    },
+    {
+      "llm_backbone": "Qwen2.5-72B-Instruct",
+      "Acc_adm": 92.5,
+      "UAR": 0.0,
+      "UBR": 93.4,
+      "PIR": 100.0,
+      "WSR": 100.0,
+      "Decision_consistency": 93.8
+    },
+    {
+      "llm_backbone": "DeepSeek-class",
+      "Acc_adm": 91.7,
+      "UAR": 1.3,
+      "UBR": 92.6,
+      "PIR": 100.0,
+      "WSR": 100.0,
+      "Decision_consistency": 92.9
+    }
+  ],
+  "exclude_from_plot_by_default": [
+    "Overall"
+  ]
+}

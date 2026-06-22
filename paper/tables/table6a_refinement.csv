@@ -1,0 +1,7 @@
+Failure_Source,Cases,Safe_Refinement↑,Correct_CLARIFY↑,Correct_REJECT↑,Residual↓
+Evidence,18,0,15,3,0
+Authority,18,0,0,17,1
+LLM_assumption,18,0,9,4,5
+Backend,18,12,2,4,0
+Consequence,18,0,16,0,2
+Total,90,12,42,28,8

@@ -1,0 +1,55 @@
+{
+  "figure_specifications": {
+    "fig3": {
+      "width_inches": 7.4,
+      "height_inches": 3.4,
+      "dpi": 600,
+      "panels": ["a", "b"],
+      "panel_layout": "1x2"
+    },
+    "fig4": {
+      "width_inches": 7.2,
+      "height_inches": 3.0,
+      "dpi": 600,
+      "panels": ["a", "b"],
+      "panel_layout": "1x2"
+    },
+    "fig5": {
+      "width_inches": 7.2,
+      "height_inches": 4.2,
+      "dpi": 600,
+      "panels": ["a", "b", "c"],
+      "panel_layout": "mosaic: a left spanning 2 rows, b top-right, c bottom-right"
+    }
+  },
+  "font_settings": {
+    "family": "sans-serif",
+    "sans_serif": ["Arial", "Helvetica", "DejaVu Sans", "Liberation Sans"],
+    "base_size": 8.0,
+    "label_size": 8.5,
+    "tick_size": 7.5,
+    "legend_size": 7.5,
+    "panel_label_size": 10.5,
+    "annotation_size": 7.2
+  },
+  "line_settings": {
+    "main_line_width": 1.6,
+    "grid_line_width": 0.4,
+    "spine_width": 0.8,
+    "marker_edge_width": 1.2
+  },
+  "colors": {
+    "eamsr": "#009E73",
+    "risk": "#D55E00",
+    "warning": "#E69F00",
+    "blue": "#0072B2",
+    "sky": "#56B4E9",
+    "purple": "#7E63A8",
+    "gray": "#7A8691",
+    "light_gray": "#D8DEE9",
+    "dark": "#222222",
+    "background": "#FFFFFF"
+  },
+  "heatmap_colormap": "custom_blues",
+  "output_formats": ["png", "pdf", "svg"]
+}

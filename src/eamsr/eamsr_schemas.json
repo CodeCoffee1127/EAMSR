@@ -1,0 +1,653 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://eamsr.framework/schemas/v1/eamsr_schemas.json",
+  "title": "EAMSR Experimental Framework Schemas",
+  "description": "JSON Schema definitions for the Evidence-carrying Autonomous Mission Safety & Reasoning (EAMSR) experimental framework. Defines MissionSample, MAC (Mission Admission Contract), and ExperimentResult data structures. See EAMSR method document Section 3 (MAC pipeline) and Section 4 (experiments).",
+  "definitions": {
+    "Scenario": {
+      "type": "string",
+      "enum": [
+        "S1_Powerline",
+        "S2_Disaster_area",
+        "S3_Campus_delivery",
+        "S4_River_monitoring",
+        "S5_Bridge_inspection",
+        "S6_Communication_limited"
+      ],
+      "description": "One of six UAV mission scenarios evaluated in the EAMSR framework (Section 4)."
+    },
+    "RiskCategory": {
+      "type": "string",
+      "enum": [
+        "T1_Normal",
+        "T2_Evidence_insufficient",
+        "T3_Authority_conflicting",
+        "T4_LLM_assumption",
+        "T5_Backend_infeasible",
+        "T6_Consequence_ambiguous"
+      ],
+      "description": "Risk taxonomy tier: T1=normal operation; T2-T6 correspond to the five risk dimensions addressed by the five proof obligations (Section 3.4)."
+    },
+    "LanguageType": {
+      "type": "string",
+      "enum": ["explicit", "semi_structured", "ambiguous"],
+      "description": "Natural language instruction type manipulated in the experiment (Section 4)."
+    },
+    "ClauseType": {
+      "type": "string",
+      "enum": [
+        "objective",
+        "spatial",
+        "temporal",
+        "energy",
+        "payload",
+        "communication",
+        "contingency",
+        "preference"
+      ],
+      "description": "Clause type in the Mission Admission Contract (Section 3.2)."
+    },
+    "ClauseMode": {
+      "type": "string",
+      "enum": ["hard", "soft", "optional", "default", "pending"],
+      "description": "Contract mode: hard=obligation H_i; soft=obligation S_i; optional; default=system-supplied; pending=requires clarification P_i (Section 3.2)."
+    },
+    "ClauseSource": {
+      "type": "string",
+      "enum": [
+        "user_explicit",
+        "user_implied",
+        "llm_derived",
+        "system_default",
+        "context_inferred"
+      ],
+      "description": "Origin of the clause: explicitly stated by user, implied by user, derived by LLM, system default, or inferred from context (Section 3.2)."
+    },
+    "Mutability": {
+      "type": "string",
+      "enum": ["keep", "weaken", "drop", "default", "clarify"],
+      "description": "Governance mutability rule for a clause (Section 3.3)."
+    },
+    "TrustLevel": {
+      "type": "string",
+      "enum": ["trusted", "untrusted", "verified"],
+      "description": "Trust assignment for a clause: trusted (verified against evidence), untrusted (isolated by USI), verified (cross-checked)."
+    },
+    "SemanticSupport": {
+      "type": "string",
+      "enum": ["Y", "N", "U"],
+      "description": "Semantic support status: Y=supported by evidence/context; N=excluded by evidence/context; U=insufficient evidence (Section 3.2)."
+    },
+    "Decision": {
+      "type": "string",
+      "enum": ["ACCEPT", "CLARIFY", "REJECT"],
+      "description": "Final admission decision from the MAC pipeline (Section 3.5)."
+    },
+    "Method": {
+      "type": "string",
+      "enum": [
+        "Direct_LLM",
+        "LLM_Backend",
+        "Rule_Gate",
+        "Greedy_Relaxation",
+        "Full_EAMSR",
+        "Ablation_No_Evidence",
+        "Ablation_No_Authority_Mutability",
+        "Ablation_No_USI",
+        "Ablation_No_MCS",
+        "Ablation_No_Backend_Witness",
+        "Ablation_No_Audit_Trail"
+      ],
+      "description": "Experimental method / ablation condition (Section 4). Full_EAMSR is the complete 5-stage pipeline; other entries are baselines and ablations."
+    },
+    "GeoPoint": {
+      "type": "object",
+      "description": "Geographic coordinate [longitude, latitude] or {lat, lon}.",
+      "properties": {
+        "lat": { "type": "number", "description": "Latitude in decimal degrees." },
+        "lon": { "type": "number", "description": "Longitude in decimal degrees." }
+      },
+      "required": ["lat", "lon"]
+    },
+    "GeoPolygon": {
+      "type": "array",
+      "description": "GeoJSON-style polygon: list of linear rings, each a list of [lon, lat] pairs.",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "minItems": 4
+      },
+      "minItems": 1
+    },
+    "TimeWindow": {
+      "type": "object",
+      "description": "A time window with start and end timestamps.",
+      "properties": {
+        "start": { "type": "string", "format": "date-time", "description": "ISO 8601 start timestamp." },
+        "end": { "type": "string", "format": "date-time", "description": "ISO 8601 end timestamp." }
+      },
+      "required": ["start", "end"]
+    },
+    "InitialState": {
+      "type": "object",
+      "description": "UAV initial state at mission start.",
+      "properties": {
+        "position": { "$ref": "#/definitions/GeoPoint", "description": "GPS position at take-off." },
+        "battery_wh": { "type": "number", "minimum": 0, "description": "Remaining battery energy in watt-hours." },
+        "altitude_m": { "type": "number", "description": "Initial altitude in metres above take-off point." }
+      },
+      "required": ["position", "battery_wh", "altitude_m"]
+    },
+    "Environment": {
+      "type": "object",
+      "description": "Operational environment snapshot.",
+      "properties": {
+        "weather": {
+          "type": "object",
+          "description": "Weather conditions.",
+          "properties": {
+            "condition": { "type": "string", "description": "e.g. clear, cloudy, rainy, windy." },
+            "wind_speed_ms": { "type": "number", "minimum": 0, "description": "Wind speed in m/s." },
+            "visibility_m": { "type": "number", "minimum": 0, "description": "Visibility in metres." },
+            "temperature_c": { "type": "number", "description": "Temperature in Celsius." }
+          }
+        },
+        "terrain": { "type": "string", "description": "Terrain type: flat, hilly, urban, forest, water." },
+        "date_time": { "type": "string", "format": "date-time", "description": "Mission date/time (ISO 8601)." }
+      },
+      "required": ["weather", "terrain", "date_time"]
+    },
+    "CommunicationMap": {
+      "type": "object",
+      "description": "Communication coverage map.",
+      "properties": {
+        "coverage_areas": {
+          "type": "array",
+          "description": "List of coverage area polygons.",
+          "items": { "$ref": "#/definitions/GeoPolygon" }
+        },
+        "bandwidth_mbps": { "type": "number", "minimum": 0, "description": "Available bandwidth in Mbps." },
+        "blackout_zones": {
+          "type": "array",
+          "description": "Areas with no communication.",
+          "items": { "$ref": "#/definitions/GeoPolygon" }
+        }
+      },
+      "required": ["coverage_areas", "bandwidth_mbps"]
+    },
+    "PayloadStatus": {
+      "type": "object",
+      "description": "Available UAV payload/sensors.",
+      "properties": {
+        "available_sensors": {
+          "type": "array",
+          "description": "List of available sensor names.",
+          "items": { "type": "string" }
+        },
+        "max_capacity_kg": { "type": "number", "minimum": 0, "description": "Maximum payload mass in kg." },
+        "current_load_kg": { "type": "number", "minimum": 0, "description": "Currently mounted payload mass in kg." }
+      },
+      "required": ["available_sensors", "max_capacity_kg"]
+    },
+    "UAVContext": {
+      "type": "object",
+      "description": "Trusted UAV context A_ctx (Section 3.1).",
+      "properties": {
+        "uav_model": { "type": "string", "description": "UAV platform model, e.g. quadcopter, fixed-wing." },
+        "initial_state": { "$ref": "#/definitions/InitialState" },
+        "environment": { "$ref": "#/definitions/Environment" },
+        "communication_map": { "$ref": "#/definitions/CommunicationMap" },
+        "payload_status": { "$ref": "#/definitions/PayloadStatus" },
+        "no_fly_zones": {
+          "type": "array",
+          "description": "Restricted airspace polygons.",
+          "items": { "$ref": "#/definitions/GeoPolygon" }
+        },
+        "geofence": { "$ref": "#/definitions/GeoPolygon", "description": "Operational boundary polygon." },
+        "time_windows": {
+          "type": "array",
+          "description": "Allowed operation time windows.",
+          "items": { "$ref": "#/definitions/TimeWindow" }
+        }
+      },
+      "required": ["uav_model", "initial_state", "environment", "communication_map", "payload_status", "no_fly_zones", "geofence", "time_windows"]
+    },
+    "ProtectedInvariants": {
+      "type": "object",
+      "description": "Protected invariants I_prot that must not be violated (Section 3.1).",
+      "properties": {
+        "return_reserve_wh": { "type": "number", "minimum": 0, "description": "Minimum energy reserve (Wh) required for safe return-to-home." },
+        "max_altitude_m": { "type": "number", "minimum": 0, "description": "Maximum allowed altitude in metres." },
+        "max_speed_ms": { "type": "number", "minimum": 0, "description": "Maximum allowed ground speed in m/s." },
+        "payload_max_kg": { "type": "number", "minimum": 0, "description": "Maximum payload mass in kg." },
+        "emergency_conditions": {
+          "type": "array",
+          "description": "Conditions that trigger emergency abort.",
+          "items": { "type": "string" }
+        },
+        "prohibited_modifications": {
+          "type": "array",
+          "description": "List of mission parameters that must not be modified by LLM derivation.",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["return_reserve_wh", "max_altitude_m", "max_speed_ms", "payload_max_kg", "emergency_conditions", "prohibited_modifications"]
+    },
+    "TextAnchor": {
+      "type": "object",
+      "description": "A text span extracted from the natural language instruction.",
+      "properties": {
+        "anchor_id": { "type": "string", "description": "Unique anchor identifier." },
+        "text_span": { "type": "string", "description": "The exact substring from the instruction." },
+        "source": { "type": "string", "description": "Document or utterance source." }
+      },
+      "required": ["anchor_id", "text_span", "source"]
+    },
+    "ContextFact": {
+      "type": "object",
+      "description": "A factual assertion derived from the UAV context.",
+      "properties": {
+        "fact_id": { "type": "string", "description": "Unique fact identifier." },
+        "fact_type": { "type": "string", "description": "Category of fact, e.g. weather, terrain, battery." },
+        "value": {},
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1, "description": "Confidence score [0,1]." }
+      },
+      "required": ["fact_id", "fact_type", "value", "confidence"]
+    },
+    "ProtectedConstraint": {
+      "type": "object",
+      "description": "A protected constraint that must be preserved.",
+      "properties": {
+        "constraint_id": { "type": "string", "description": "Unique constraint identifier." },
+        "description": { "type": "string", "description": "Human-readable constraint description." },
+        "type": { "type": "string", "description": "Constraint category." }
+      },
+      "required": ["constraint_id", "description", "type"]
+    },
+    "SystemDefault": {
+      "type": "object",
+      "description": "A system default rule applied when no explicit instruction is given.",
+      "properties": {
+        "default_id": { "type": "string", "description": "Unique default identifier." },
+        "rule": { "type": "string", "description": "The default rule text." },
+        "condition": { "type": "string", "description": "Condition under which this default applies." }
+      },
+      "required": ["default_id", "rule", "condition"]
+    },
+    "EvidenceBase": {
+      "type": "object",
+      "description": "Evidence library E (Section 3.1).",
+      "properties": {
+        "text_anchors": {
+          "type": "array",
+          "description": "Anchored text spans from the NL instruction.",
+          "items": { "$ref": "#/definitions/TextAnchor" }
+        },
+        "context_facts": {
+          "type": "array",
+          "description": "Verified facts from the UAV context.",
+          "items": { "$ref": "#/definitions/ContextFact" }
+        },
+        "protected_constraints": {
+          "type": "array",
+          "description": "Constraints that must not be violated.",
+          "items": { "$ref": "#/definitions/ProtectedConstraint" }
+        },
+        "system_defaults": {
+          "type": "array",
+          "description": "Default rules for missing information.",
+          "items": { "$ref": "#/definitions/SystemDefault" }
+        }
+      },
+      "required": ["text_anchors", "context_facts", "protected_constraints", "system_defaults"]
+    },
+    "GovernanceStrategy": {
+      "type": "object",
+      "description": "Governance strategy Gamma (Section 3.3).",
+      "properties": {
+        "source_verification": {
+          "type": "object",
+          "description": "Required evidence sources and their trust levels.",
+          "properties": {
+            "required_sources": { "type": "array", "items": { "type": "string" }, "description": "List of required source types." },
+            "trust_levels": { "type": "object", "description": "Mapping from source type to trust level.", "additionalProperties": { "type": "string" } }
+          },
+          "required": ["required_sources", "trust_levels"]
+        },
+        "authority_levels": {
+          "type": "object",
+          "description": "Authority hierarchy: role -> permission level.",
+          "additionalProperties": { "type": "string" }
+        },
+        "mutability_rules": {
+          "type": "array",
+          "description": "Rules governing how clauses may be transformed.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "clause_type": { "type": "string", "description": "Clause type this rule applies to." },
+              "allowed_transforms": { "type": "array", "items": { "type": "string" }, "description": "Permitted mutability values." }
+            },
+            "required": ["clause_type", "allowed_transforms"]
+          }
+        }
+      },
+      "required": ["source_verification", "authority_levels", "mutability_rules"]
+    },
+    "AgentAnnotation": {
+      "type": "object",
+      "description": "Annotation from a single agent in the dual-agent annotation protocol.",
+      "properties": {
+        "decision": { "$ref": "#/definitions/Decision" },
+        "risk_category": { "$ref": "#/definitions/RiskCategory" },
+        "clauses": { "type": "array", "items": { "type": "string" }, "description": "List of extracted clause texts." },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1, "description": "Annotator confidence [0,1]." },
+        "timestamp": { "type": "string", "format": "date-time", "description": "Annotation timestamp (ISO 8601)." }
+      },
+      "required": ["decision", "risk_category", "clauses", "confidence", "timestamp"]
+    },
+    "ArbitrationResult": {
+      "type": "object",
+      "description": "Result of dual-agent arbitration.",
+      "properties": {
+        "status": { "type": "string", "enum": ["agreed", "conflict", "manual"], "description": "Arbitration outcome status." },
+        "final_label": { "$ref": "#/definitions/Decision", "description": "Arbitrated final decision." },
+        "arbitrator": { "type": "string", "description": "Identifier of the arbitrator or arbiter process." },
+        "notes": { "type": "string", "description": "Human-readable arbitration notes." }
+      },
+      "required": ["status", "final_label", "arbitrator", "notes"]
+    },
+    "AgreementScores": {
+      "type": "object",
+      "description": "Per-field inter-annotator agreement rates.",
+      "properties": {
+        "decision_agreement": { "type": "number", "minimum": 0, "maximum": 1 },
+        "risk_category_agreement": { "type": "number", "minimum": 0, "maximum": 1 },
+        "clause_agreement": { "type": "number", "minimum": 0, "maximum": 1 },
+        "overall_cohen_kappa": { "type": "number", "minimum": -1, "maximum": 1 }
+      },
+      "required": ["decision_agreement", "risk_category_agreement", "clause_agreement", "overall_cohen_kappa"]
+    },
+    "Annotations": {
+      "type": "object",
+      "description": "Dual-agent annotation results for a MissionSample.",
+      "properties": {
+        "agent_a": { "$ref": "#/definitions/AgentAnnotation" },
+        "agent_b": { "$ref": "#/definitions/AgentAnnotation" },
+        "arbitration": { "$ref": "#/definitions/ArbitrationResult" },
+        "agreement_scores": { "$ref": "#/definitions/AgreementScores" }
+      },
+      "required": ["agent_a", "agent_b", "arbitration", "agreement_scores"]
+    },
+    "ClauseFormalSemantic": {
+      "type": "object",
+      "description": "Structured mission semantics for a clause (location, action, parameters).",
+      "properties": {
+        "location": { "type": "object", "description": "Spatial specification." },
+        "action": { "type": "string", "description": "Action verb or command." },
+        "parameters": { "type": "object", "description": "Action-specific parameters.", "additionalProperties": true },
+        "constraints": { "type": "array", "items": { "type": "string" }, "description": "Applicable constraints." }
+      }
+    },
+    "MACClause": {
+      "type": "object",
+      "description": "A single clause in the Mission Admission Contract (Section 3.2).",
+      "properties": {
+        "id": { "type": "string", "pattern": "^CL-[0-9]+$", "description": "Clause identifier, e.g. CL-1, CL-2." },
+        "anchor": { "type": "string", "description": "Text anchor or context pointer." },
+        "type": { "$ref": "#/definitions/ClauseType" },
+        "mode": { "$ref": "#/definitions/ClauseMode" },
+        "source": { "$ref": "#/definitions/ClauseSource" },
+        "evidence_ptr": {
+          "type": "array",
+          "description": "References to evidence_base entries.",
+          "items": { "type": "string" }
+        },
+        "authority": { "type": "string", "description": "Authority level for this clause." },
+        "mutability": { "$ref": "#/definitions/Mutability" },
+        "trust": { "$ref": "#/definitions/TrustLevel" },
+        "semantic_support": { "$ref": "#/definitions/SemanticSupport" },
+        "formal_semantic": { "$ref": "#/definitions/ClauseFormalSemantic" }
+      },
+      "required": ["id", "anchor", "type", "mode", "source", "evidence_ptr", "authority", "mutability", "trust", "semantic_support", "formal_semantic"]
+    },
+    "ProofObligations": {
+      "type": "object",
+      "description": "Proof obligation results from the 5-stage pipeline (Section 3.4).",
+      "properties": {
+        "PO_E": { "type": "boolean", "description": "Evidence obligation: all claims grounded in evidence?" },
+        "PO_A": { "type": "boolean", "description": "Authority obligation: conflicting authorities resolved?" },
+        "PO_M": { "type": "boolean", "description": "Mutability obligation: only allowed transformations applied?" },
+        "PO_U": { "type": "boolean", "description": "Untrusted semantic isolation obligation: untrusted clauses isolated?" },
+        "PO_B": { "type": "boolean", "description": "Backend obligation: backend witness can validate executability?" }
+      },
+      "required": ["PO_E", "PO_A", "PO_M", "PO_U", "PO_B"]
+    },
+    "ConsequenceSignature": {
+      "type": "object",
+      "description": "Consequence signature chi(C) computed by the MCS stage (Section 3.5).",
+      "properties": {
+        "executability": { "type": "number", "minimum": 0, "maximum": 1, "description": "Overall executability score [0,1]." },
+        "hard_goals": { "type": "array", "items": { "type": "string" }, "description": "List of hard goals that must be achieved." },
+        "optional_goals": { "type": "array", "items": { "type": "string" }, "description": "List of optional/soft goals." },
+        "sequence_closure": { "type": "array", "items": { "type": "string" }, "description": "Ordered sequence of actions (plan closure)." },
+        "min_energy_margin": { "type": "number", "description": "Minimum energy margin over the plan (Wh)." },
+        "min_time_margin": { "type": "number", "description": "Minimum time margin over the plan (seconds)." },
+        "airspace_compliance": { "type": "number", "minimum": 0, "maximum": 1, "description": "Airspace compliance score [0,1]." },
+        "communication_feasibility": { "type": "number", "minimum": 0, "maximum": 1, "description": "Communication feasibility score [0,1]." },
+        "payload_satisfaction": { "type": "number", "minimum": 0, "maximum": 1, "description": "Payload requirement satisfaction [0,1]." },
+        "weather_satisfaction": { "type": "number", "minimum": 0, "maximum": 1, "description": "Weather constraint satisfaction [0,1]." }
+      },
+      "required": ["executability", "hard_goals", "optional_goals", "sequence_closure", "min_energy_margin", "min_time_margin", "airspace_compliance", "communication_feasibility", "payload_satisfaction", "weather_satisfaction"]
+    },
+    "WitnessAction": {
+      "type": "object",
+      "description": "A single action in the witness plan.",
+      "properties": {
+        "action_type": { "type": "string", "description": "Action type: fly_to, hover, capture, land, etc." },
+        "start_time": { "type": "number", "description": "Start time in seconds from mission start." },
+        "end_time": { "type": "number", "description": "End time in seconds from mission start." },
+        "parameters": { "type": "object", "description": "Action-specific parameters.", "additionalProperties": true }
+      },
+      "required": ["action_type", "start_time", "end_time", "parameters"]
+    },
+    "WitnessPlan": {
+      "type": "object",
+      "description": "Backend witness plan pi produced when decision is ACCEPT (Section 3.5).",
+      "properties": {
+        "actions": {
+          "type": "array",
+          "description": "Ordered list of planned actions.",
+          "items": { "$ref": "#/definitions/WitnessAction" }
+        },
+        "energy_profile": {
+          "type": "array",
+          "description": "Predicted battery level over time.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "time": { "type": "number", "description": "Elapsed time in seconds." },
+              "remaining_wh": { "type": "number", "description": "Remaining battery energy in Wh." }
+            },
+            "required": ["time", "remaining_wh"]
+          }
+        },
+        "position_profile": {
+          "type": "array",
+          "description": "Predicted position over time.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "time": { "type": "number", "description": "Elapsed time in seconds." },
+              "lat": { "type": "number", "description": "Latitude." },
+              "lon": { "type": "number", "description": "Longitude." },
+              "alt": { "type": "number", "description": "Altitude in metres." }
+            },
+            "required": ["time", "lat", "lon", "alt"]
+          }
+        },
+        "constraints_check": {
+          "type": "object",
+          "description": "Per-constraint satisfaction status.",
+          "additionalProperties": { "type": "boolean" }
+        }
+      },
+      "required": ["actions", "energy_profile", "position_profile", "constraints_check"]
+    },
+    "ConfusionMatrix": {
+      "type": "object",
+      "description": "3x3 confusion matrix for admission decisions.",
+      "properties": {
+        "rows": {
+          "type": "array",
+          "description": "Row labels (predicted).",
+          "items": { "type": "string", "enum": ["ACCEPT", "CLARIFY", "REJECT"] },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "columns": {
+          "type": "array",
+          "description": "Column labels (ground truth).",
+          "items": { "type": "string", "enum": ["ACCEPT", "CLARIFY", "REJECT"] },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "values": {
+          "type": "array",
+          "description": "3x3 count matrix.",
+          "items": {
+            "type": "array",
+            "items": { "type": "integer", "minimum": 0 },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": ["rows", "columns", "values"]
+    },
+    "Metrics": {
+      "type": "object",
+      "description": "Evaluation metrics for a single experimental run (Section 4).",
+      "properties": {
+        "Acc_adm": { "type": "number", "minimum": 0, "maximum": 1, "description": "Admission accuracy: fraction of correct decisions." },
+        "UAR": { "type": "number", "minimum": 0, "maximum": 1, "description": "Unsafe admission rate: unsafe missions incorrectly accepted." },
+        "ECR": { "type": "number", "minimum": 0, "maximum": 1, "description": "Evidence coverage rate: claims grounded in evidence." },
+        "UBR": { "type": "number", "minimum": 0, "maximum": 1, "description": "Unverified belief/hypothesis block rate: LLM assumptions blocked." },
+        "PIR": { "type": "number", "minimum": 0, "maximum": 1, "description": "Protected invariant retention rate: invariants preserved." },
+        "WSR": { "type": "number", "minimum": 0, "maximum": 1, "description": "Witness success rate: backend plans validated successfully." },
+        "CNR": { "type": "number", "minimum": 0, "maximum": 1, "description": "Clarification necessity rate: appropriate CLARIFY decisions." },
+        "ATR": { "type": "number", "minimum": 0, "maximum": 1, "description": "Audit trail completeness rate: full auditability achieved." }
+      },
+      "required": ["Acc_adm", "UAR", "ECR", "UBR", "PIR", "WSR", "CNR", "ATR"]
+    },
+    "BudgetUsed": {
+      "type": "object",
+      "description": "Computational budget consumed by a run.",
+      "properties": {
+        "candidates_generated": { "type": "integer", "minimum": 0, "description": "Number of MAC candidates generated." },
+        "refinement_rounds": { "type": "integer", "minimum": 0, "description": "Number of refinement iterations." },
+        "total_calls": { "type": "integer", "minimum": 0, "description": "Total LLM or backend API calls." }
+      },
+      "required": ["candidates_generated", "refinement_rounds", "total_calls"]
+    }
+  },
+  "properties": {
+    "MissionSample": {
+      "$id": "#MissionSample",
+      "type": "object",
+      "description": "A single mission sample in the EAMSR dataset (Section 4). Combines natural language instruction, UAV context, invariants, evidence base, governance, and human annotations.",
+      "properties": {
+        "sample_id": {
+          "type": "string",
+          "pattern": "^MS-S[1-6]-T[1-6]-(explicit|semi_structured|ambiguous)-[0-9]{2}$",
+          "description": "Unique sample identifier. Format: MS-{scenario}-{risk}-{lang}-{number}, e.g. MS-S1-T1-explicit-01."
+        },
+        "scenario": { "$ref": "#/definitions/Scenario" },
+        "risk_category": { "$ref": "#/definitions/RiskCategory" },
+        "language_type": { "$ref": "#/definitions/LanguageType" },
+        "instruction": { "type": "string", "description": "Natural language task instruction (x)." },
+        "context": { "$ref": "#/definitions/UAVContext" },
+        "invariants": { "$ref": "#/definitions/ProtectedInvariants" },
+        "evidence_base": { "$ref": "#/definitions/EvidenceBase" },
+        "governance": { "$ref": "#/definitions/GovernanceStrategy" },
+        "ground_truth": { "$ref": "#/definitions/Decision", "description": "Human-adjudicated ground-truth decision." },
+        "annotations": { "$ref": "#/definitions/Annotations" }
+      },
+      "required": ["sample_id", "scenario", "risk_category", "language_type", "instruction", "context", "invariants", "evidence_base", "governance", "ground_truth", "annotations"]
+    },
+    "MAC": {
+      "$id": "#MAC",
+      "type": "object",
+      "description": "Mission Admission Contract output by the EAMSR pipeline (Section 3). Contains structured clauses, proof obligations, consequence signature, and final decision.",
+      "properties": {
+        "contract_id": {
+          "type": "string",
+          "pattern": "^MAC-MS-S[1-6]-T[1-6]-(explicit|semi_structured|ambiguous)-[0-9]{2}-[0-9]+$",
+          "description": "Unique contract identifier. Format: MAC-{sample_id}-{candidate_number}."
+        },
+        "sample_id": { "type": "string", "description": "Reference to the parent MissionSample." },
+        "clauses": {
+          "type": "array",
+          "description": "All clauses in the contract (Section 3.2).",
+          "items": { "$ref": "#/definitions/MACClause" }
+        },
+        "hard_obligations": {
+          "type": "array",
+          "description": "Clause IDs classified as hard obligations H_i (Section 3.2).",
+          "items": { "type": "string" }
+        },
+        "soft_obligations": {
+          "type": "array",
+          "description": "Clause IDs classified as soft obligations S_i (Section 3.2).",
+          "items": { "type": "string" }
+        },
+        "pending_set": {
+          "type": "array",
+          "description": "Clause IDs that require clarification P_i (Section 3.2).",
+          "items": { "type": "string" }
+        },
+        "po_results": { "$ref": "#/definitions/ProofObligations" },
+        "consequence_signature": { "$ref": "#/definitions/ConsequenceSignature" },
+        "decision": { "$ref": "#/definitions/Decision" },
+        "audit_trail_id": { "type": "string", "description": "Reference to the audit trail document for this contract." }
+      },
+      "required": ["contract_id", "sample_id", "clauses", "hard_obligations", "soft_obligations", "pending_set", "po_results", "consequence_signature", "decision", "audit_trail_id"]
+    },
+    "ExperimentResult": {
+      "$id": "#ExperimentResult",
+      "type": "object",
+      "description": "Result of running a single experimental method on a single mission sample (Section 4).",
+      "properties": {
+        "run_id": {
+          "type": "string",
+          "pattern": "^RUN-(Direct_LLM|LLM_Backend|Rule_Gate|Greedy_Relaxation|Full_EAMSR|Ablation_No_Evidence|Ablation_No_Authority_Mutability|Ablation_No_USI|Ablation_No_MCS|Ablation_No_Backend_Witness|Ablation_No_Audit_Trail)-MS-S[1-6]-T[1-6]-(explicit|semi_structured|ambiguous)-[0-9]{2}-[0-9]+$",
+          "description": "Unique run identifier. Format: RUN-{method}-{sample_id}-{run_number}."
+        },
+        "method": { "$ref": "#/definitions/Method" },
+        "sample_id": { "type": "string", "description": "Reference to the MissionSample." },
+        "predicted_decision": { "$ref": "#/definitions/Decision" },
+        "confusion_matrix": { "$ref": "#/definitions/ConfusionMatrix" },
+        "metrics": { "$ref": "#/definitions/Metrics" },
+        "witness_plan": {
+          "oneOf": [
+            { "$ref": "#/definitions/WitnessPlan" },
+            { "type": "null" }
+          ],
+          "description": "Witness plan pi if predicted_decision is ACCEPT; null otherwise."
+        },
+        "runtime_seconds": { "type": "number", "minimum": 0, "description": "Wall-clock runtime in seconds." },
+        "budget_used": { "$ref": "#/definitions/BudgetUsed" }
+      },
+      "required": ["run_id", "method", "sample_id", "predicted_decision", "confusion_matrix", "metrics", "witness_plan", "runtime_seconds", "budget_used"]
+    }
+  },
+  "type": "object",
+  "required": ["MissionSample", "MAC", "ExperimentResult"]
+}

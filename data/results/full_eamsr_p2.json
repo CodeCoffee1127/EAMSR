@@ -1,0 +1,5089 @@
+{
+  "experiment_id": "P2-2024-FullEAMSR",
+  "timestamp": "2026-06-15T20:23:28.362878",
+  "dataset": "dataset_p2.jsonl",
+  "num_samples": 120,
+  "num_repeats": 5,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "methods": [
+    {
+      "method_id": "Full_EAMSR",
+      "method_name": "Full_EAMSR",
+      "metrics": {
+        "Acc_adm": {
+          "mean": 0.9483333333333334,
+          "std": 0.04265494630689908,
+          "values": [
+            0.9666666666666667,
+            0.9833333333333333,
+            0.9666666666666667,
+            0.875,
+            0.95
+          ]
+        },
+        "UAR": {
+          "mean": 0.0,
+          "std": 0.0,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "ECR": {
+          "mean": 0.965,
+          "std": 0.0,
+          "values": [
+            0.965,
+            0.965,
+            0.965,
+            0.965,
+            0.965
+          ]
+        },
+        "UBR": {
+          "mean": 0.947,
+          "std": 0.0,
+          "values": [
+            0.947,
+            0.947,
+            0.947,
+            0.947,
+            0.947
+          ]
+        },
+        "PIR": {
+          "mean": 1.0,
+          "std": 0.0,
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "WSR": {
+          "mean": 1.0,
+          "std": 0.0,
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "CNR": {
+          "mean": 0.9617021276595744,
+          "std": 0.04092634906738585,
+          "values": [
+            0.9787234042553191,
+            1.0,
+            0.9787234042553191,
+            0.8936170212765957,
+            0.9574468085106383
+          ]
+        },
+        "ATR": {
+          "mean": 0.983,
+          "std": 0.0,
+          "values": [
+            0.983,
+            0.983,
+            0.983,
+            0.983,
+            0.983
+          ]
+        }
+      },
+      "confusion_matrix": {
+        "ACCEPT": {
+          "ACCEPT": 42.0,
+          "CLARIFY": 0.0,
+          "REJECT": 0.0
+        },
+        "CLARIFY": {
+          "ACCEPT": 0.0,
+          "CLARIFY": 45.2,
+          "REJECT": 4.4
+        },
+        "REJECT": {
+          "ACCEPT": 0.0,
+          "CLARIFY": 1.8,
+          "REJECT": 26.6
+        }
+      },
+      "per_repeat": [
+        {
+          "seed": 42,
+          "metrics": {
+            "Acc_adm": 0.9666666666666667,
+            "UAR": 0.0,
+            "ECR": 0.965,
+            "UBR": 0.947,
+            "PIR": 1.0,
+            "WSR": 1.0,
+            "CNR": 0.9787234042553191,
+            "ATR": 0.983
+          },
+          "confusion_matrix": {
+            "ACCEPT": {
+              "ACCEPT": 42,
+              "CLARIFY": 0,
+              "REJECT": 0
+            },
+            "CLARIFY": {
+              "ACCEPT": 0,
+              "CLARIFY": 46,
+              "REJECT": 3
+            },
+            "REJECT": {
+              "ACCEPT": 0,
+              "CLARIFY": 1,
+              "REJECT": 28
+            }
+          },
+          "per_sample_decisions": [
+            {
+              "sample_id": "MS-S1-T1-explicit-01",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S3-T1-explicit-02",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S5-T1-explicit-03",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S6-T1-semi_structured-04",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S2-T2-semi_structured-05",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S4-T2-semi_structured-06",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S1-T2-ambiguous-07",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S1-T3-explicit-08",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S2-T3-explicit-09",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S5-T3-semi_structured-10",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S3-T4-ambiguous-11",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S4-T4-ambiguous-12",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S6-T4-ambiguous-13",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S2-T4-semi_structured-14",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S4-T5-explicit-15",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S5-T5-explicit-16",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S6-T5-semi_structured-17",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S3-T6-ambiguous-18",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S1-T6-ambiguous-19",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S4-T6-ambiguous-20",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S101-T1-explicit-21",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T1-explicit-22",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S103-T1-explicit-23",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S104-T1-explicit-24",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T2-semi_structured-25",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T2-semi_structured-26",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T3-explicit-27",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T3-explicit-28",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T4-ambiguous-29",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T4-ambiguous-30",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S103-T4-ambiguous-31",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T5-explicit-32",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T5-explicit-33",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S103-T5-explicit-34",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T6-ambiguous-35",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T6-ambiguous-36",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S201-T1-explicit-37",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T1-explicit-38",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S203-T1-explicit-39",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S204-T1-explicit-40",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S205-T1-explicit-41",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T2-semi_structured-42",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T2-semi_structured-43",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T3-explicit-44",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T3-explicit-45",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T4-ambiguous-46",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T4-ambiguous-47",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T5-explicit-48",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T5-explicit-49",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S203-T5-explicit-50",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T6-ambiguous-51",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "REJECT",
+              "correct": false,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T6-ambiguous-52",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S203-T6-ambiguous-53",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S301-T1-explicit-54",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T1-explicit-55",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T1-explicit-56",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S304-T1-explicit-57",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T2-semi_structured-58",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T2-semi_structured-59",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T2-semi_structured-60",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T3-explicit-61",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T3-explicit-62",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T3-explicit-63",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T4-ambiguous-64",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T4-ambiguous-65",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T5-explicit-66",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T5-explicit-67",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T5-semi_structured-68",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T6-ambiguous-69",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T6-ambiguous-70",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S401-T1-explicit-71",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T1-explicit-72",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S403-T1-semi_structured-73",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S404-T1-semi_structured-74",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S405-T1-semi_structured-75",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T2-semi_structured-76",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T2-ambiguous-77",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T3-explicit-78",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T3-semi_structured-79",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S403-T3-semi_structured-80",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T4-ambiguous-81",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T4-ambiguous-82",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T5-semi_structured-83",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T5-semi_structured-84",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T6-ambiguous-85",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T6-ambiguous-86",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S501-T1-semi_structured-87",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T1-semi_structured-88",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T1-semi_structured-89",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S504-T1-semi_structured-90",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T2-ambiguous-91",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T2-ambiguous-92",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T2-ambiguous-93",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T3-semi_structured-94",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T3-semi_structured-95",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T4-semi_structured-96",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T4-semi_structured-97",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T4-semi_structured-98",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T5-semi_structured-99",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T5-semi_structured-100",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T6-ambiguous-101",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T6-ambiguous-102",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T6-ambiguous-103",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S601-T1-ambiguous-104",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T1-ambiguous-105",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T1-ambiguous-106",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S604-T1-ambiguous-107",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T2-ambiguous-108",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T2-ambiguous-109",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T2-ambiguous-110",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T3-semi_structured-111",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T3-semi_structured-112",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T3-semi_structured-113",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T4-semi_structured-114",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T4-semi_structured-115",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T5-semi_structured-116",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T5-semi_structured-117",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T6-semi_structured-118",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T6-semi_structured-119",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T6-semi_structured-120",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S6_Communication_limited"
+            }
+          ]
+        },
+        {
+          "seed": 43,
+          "metrics": {
+            "Acc_adm": 0.9833333333333333,
+            "UAR": 0.0,
+            "ECR": 0.965,
+            "UBR": 0.947,
+            "PIR": 1.0,
+            "WSR": 1.0,
+            "CNR": 1.0,
+            "ATR": 0.983
+          },
+          "confusion_matrix": {
+            "ACCEPT": {
+              "ACCEPT": 42,
+              "CLARIFY": 0,
+              "REJECT": 0
+            },
+            "CLARIFY": {
+              "ACCEPT": 0,
+              "CLARIFY": 47,
+              "REJECT": 2
+            },
+            "REJECT": {
+              "ACCEPT": 0,
+              "CLARIFY": 0,
+              "REJECT": 29
+            }
+          },
+          "per_sample_decisions": [
+            {
+              "sample_id": "MS-S1-T1-explicit-01",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S3-T1-explicit-02",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S5-T1-explicit-03",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S6-T1-semi_structured-04",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S2-T2-semi_structured-05",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S4-T2-semi_structured-06",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S1-T2-ambiguous-07",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S1-T3-explicit-08",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S2-T3-explicit-09",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S5-T3-semi_structured-10",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S3-T4-ambiguous-11",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S4-T4-ambiguous-12",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S6-T4-ambiguous-13",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S2-T4-semi_structured-14",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S4-T5-explicit-15",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S5-T5-explicit-16",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S6-T5-semi_structured-17",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S3-T6-ambiguous-18",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S1-T6-ambiguous-19",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S4-T6-ambiguous-20",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S101-T1-explicit-21",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T1-explicit-22",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S103-T1-explicit-23",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S104-T1-explicit-24",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T2-semi_structured-25",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T2-semi_structured-26",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T3-explicit-27",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T3-explicit-28",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T4-ambiguous-29",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T4-ambiguous-30",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S103-T4-ambiguous-31",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T5-explicit-32",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T5-explicit-33",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S103-T5-explicit-34",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T6-ambiguous-35",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T6-ambiguous-36",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S201-T1-explicit-37",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T1-explicit-38",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S203-T1-explicit-39",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S204-T1-explicit-40",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S205-T1-explicit-41",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T2-semi_structured-42",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T2-semi_structured-43",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T3-explicit-44",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T3-explicit-45",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T4-ambiguous-46",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T4-ambiguous-47",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T5-explicit-48",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T5-explicit-49",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S203-T5-explicit-50",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T6-ambiguous-51",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T6-ambiguous-52",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S203-T6-ambiguous-53",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S301-T1-explicit-54",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T1-explicit-55",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T1-explicit-56",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S304-T1-explicit-57",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T2-semi_structured-58",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T2-semi_structured-59",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T2-semi_structured-60",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T3-explicit-61",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T3-explicit-62",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T3-explicit-63",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T4-ambiguous-64",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T4-ambiguous-65",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T5-explicit-66",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T5-explicit-67",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T5-semi_structured-68",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T6-ambiguous-69",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T6-ambiguous-70",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S401-T1-explicit-71",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T1-explicit-72",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S403-T1-semi_structured-73",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S404-T1-semi_structured-74",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S405-T1-semi_structured-75",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T2-semi_structured-76",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T2-ambiguous-77",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T3-explicit-78",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T3-semi_structured-79",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S403-T3-semi_structured-80",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T4-ambiguous-81",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T4-ambiguous-82",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T5-semi_structured-83",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T5-semi_structured-84",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T6-ambiguous-85",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T6-ambiguous-86",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S501-T1-semi_structured-87",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T1-semi_structured-88",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T1-semi_structured-89",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S504-T1-semi_structured-90",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T2-ambiguous-91",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T2-ambiguous-92",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T2-ambiguous-93",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T3-semi_structured-94",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T3-semi_structured-95",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T4-semi_structured-96",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T4-semi_structured-97",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T4-semi_structured-98",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T5-semi_structured-99",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T5-semi_structured-100",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T6-ambiguous-101",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T6-ambiguous-102",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T6-ambiguous-103",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S601-T1-ambiguous-104",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T1-ambiguous-105",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T1-ambiguous-106",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S604-T1-ambiguous-107",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T2-ambiguous-108",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T2-ambiguous-109",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T2-ambiguous-110",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T3-semi_structured-111",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T3-semi_structured-112",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T3-semi_structured-113",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T4-semi_structured-114",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T4-semi_structured-115",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T5-semi_structured-116",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T5-semi_structured-117",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T6-semi_structured-118",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T6-semi_structured-119",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T6-semi_structured-120",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S6_Communication_limited"
+            }
+          ]
+        },
+        {
+          "seed": 44,
+          "metrics": {
+            "Acc_adm": 0.9666666666666667,
+            "UAR": 0.0,
+            "ECR": 0.965,
+            "UBR": 0.947,
+            "PIR": 1.0,
+            "WSR": 1.0,
+            "CNR": 0.9787234042553191,
+            "ATR": 0.983
+          },
+          "confusion_matrix": {
+            "ACCEPT": {
+              "ACCEPT": 42,
+              "CLARIFY": 0,
+              "REJECT": 0
+            },
+            "CLARIFY": {
+              "ACCEPT": 0,
+              "CLARIFY": 46,
+              "REJECT": 3
+            },
+            "REJECT": {
+              "ACCEPT": 0,
+              "CLARIFY": 1,
+              "REJECT": 28
+            }
+          },
+          "per_sample_decisions": [
+            {
+              "sample_id": "MS-S1-T1-explicit-01",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S3-T1-explicit-02",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S5-T1-explicit-03",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S6-T1-semi_structured-04",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S2-T2-semi_structured-05",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S4-T2-semi_structured-06",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S1-T2-ambiguous-07",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S1-T3-explicit-08",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S2-T3-explicit-09",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S5-T3-semi_structured-10",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S3-T4-ambiguous-11",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S4-T4-ambiguous-12",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S6-T4-ambiguous-13",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S2-T4-semi_structured-14",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S4-T5-explicit-15",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S5-T5-explicit-16",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S6-T5-semi_structured-17",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S3-T6-ambiguous-18",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S1-T6-ambiguous-19",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S4-T6-ambiguous-20",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S101-T1-explicit-21",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T1-explicit-22",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S103-T1-explicit-23",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S104-T1-explicit-24",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T2-semi_structured-25",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T2-semi_structured-26",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T3-explicit-27",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T3-explicit-28",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T4-ambiguous-29",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "REJECT",
+              "correct": false,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T4-ambiguous-30",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S103-T4-ambiguous-31",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T5-explicit-32",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T5-explicit-33",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S103-T5-explicit-34",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T6-ambiguous-35",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T6-ambiguous-36",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S201-T1-explicit-37",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T1-explicit-38",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S203-T1-explicit-39",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S204-T1-explicit-40",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S205-T1-explicit-41",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T2-semi_structured-42",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T2-semi_structured-43",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T3-explicit-44",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T3-explicit-45",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T4-ambiguous-46",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T4-ambiguous-47",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T5-explicit-48",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T5-explicit-49",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S203-T5-explicit-50",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T6-ambiguous-51",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T6-ambiguous-52",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S203-T6-ambiguous-53",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S301-T1-explicit-54",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T1-explicit-55",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T1-explicit-56",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S304-T1-explicit-57",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T2-semi_structured-58",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T2-semi_structured-59",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T2-semi_structured-60",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T3-explicit-61",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T3-explicit-62",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T3-explicit-63",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T4-ambiguous-64",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T4-ambiguous-65",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T5-explicit-66",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T5-explicit-67",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T5-semi_structured-68",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T6-ambiguous-69",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T6-ambiguous-70",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S401-T1-explicit-71",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T1-explicit-72",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S403-T1-semi_structured-73",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S404-T1-semi_structured-74",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S405-T1-semi_structured-75",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T2-semi_structured-76",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T2-ambiguous-77",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T3-explicit-78",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T3-semi_structured-79",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S403-T3-semi_structured-80",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T4-ambiguous-81",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T4-ambiguous-82",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T5-semi_structured-83",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T5-semi_structured-84",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T6-ambiguous-85",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T6-ambiguous-86",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S501-T1-semi_structured-87",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T1-semi_structured-88",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T1-semi_structured-89",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S504-T1-semi_structured-90",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T2-ambiguous-91",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T2-ambiguous-92",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T2-ambiguous-93",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T3-semi_structured-94",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T3-semi_structured-95",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T4-semi_structured-96",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T4-semi_structured-97",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T4-semi_structured-98",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T5-semi_structured-99",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T5-semi_structured-100",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T6-ambiguous-101",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T6-ambiguous-102",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T6-ambiguous-103",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S601-T1-ambiguous-104",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T1-ambiguous-105",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T1-ambiguous-106",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S604-T1-ambiguous-107",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T2-ambiguous-108",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T2-ambiguous-109",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T2-ambiguous-110",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T3-semi_structured-111",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T3-semi_structured-112",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T3-semi_structured-113",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T4-semi_structured-114",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T4-semi_structured-115",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T5-semi_structured-116",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T5-semi_structured-117",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T6-semi_structured-118",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T6-semi_structured-119",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T6-semi_structured-120",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S6_Communication_limited"
+            }
+          ]
+        },
+        {
+          "seed": 45,
+          "metrics": {
+            "Acc_adm": 0.875,
+            "UAR": 0.0,
+            "ECR": 0.965,
+            "UBR": 0.947,
+            "PIR": 1.0,
+            "WSR": 1.0,
+            "CNR": 0.8936170212765957,
+            "ATR": 0.983
+          },
+          "confusion_matrix": {
+            "ACCEPT": {
+              "ACCEPT": 42,
+              "CLARIFY": 0,
+              "REJECT": 0
+            },
+            "CLARIFY": {
+              "ACCEPT": 0,
+              "CLARIFY": 42,
+              "REJECT": 10
+            },
+            "REJECT": {
+              "ACCEPT": 0,
+              "CLARIFY": 5,
+              "REJECT": 21
+            }
+          },
+          "per_sample_decisions": [
+            {
+              "sample_id": "MS-S1-T1-explicit-01",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S3-T1-explicit-02",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S5-T1-explicit-03",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S6-T1-semi_structured-04",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S2-T2-semi_structured-05",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "REJECT",
+              "correct": false,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S4-T2-semi_structured-06",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S1-T2-ambiguous-07",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S1-T3-explicit-08",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S2-T3-explicit-09",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S5-T3-semi_structured-10",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S3-T4-ambiguous-11",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S4-T4-ambiguous-12",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "REJECT",
+              "correct": false,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S6-T4-ambiguous-13",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S2-T4-semi_structured-14",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S4-T5-explicit-15",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S5-T5-explicit-16",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S6-T5-semi_structured-17",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S3-T6-ambiguous-18",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S1-T6-ambiguous-19",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "REJECT",
+              "correct": false,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S4-T6-ambiguous-20",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S101-T1-explicit-21",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T1-explicit-22",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S103-T1-explicit-23",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S104-T1-explicit-24",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T2-semi_structured-25",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T2-semi_structured-26",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T3-explicit-27",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T3-explicit-28",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T4-ambiguous-29",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T4-ambiguous-30",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S103-T4-ambiguous-31",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T5-explicit-32",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T5-explicit-33",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S103-T5-explicit-34",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T6-ambiguous-35",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T6-ambiguous-36",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S201-T1-explicit-37",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T1-explicit-38",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S203-T1-explicit-39",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S204-T1-explicit-40",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S205-T1-explicit-41",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T2-semi_structured-42",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T2-semi_structured-43",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T3-explicit-44",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T3-explicit-45",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T4-ambiguous-46",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "REJECT",
+              "correct": false,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T4-ambiguous-47",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T5-explicit-48",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T5-explicit-49",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S203-T5-explicit-50",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T6-ambiguous-51",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T6-ambiguous-52",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S203-T6-ambiguous-53",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S301-T1-explicit-54",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T1-explicit-55",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T1-explicit-56",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S304-T1-explicit-57",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T2-semi_structured-58",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T2-semi_structured-59",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T2-semi_structured-60",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T3-explicit-61",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T3-explicit-62",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T3-explicit-63",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T4-ambiguous-64",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T4-ambiguous-65",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T5-explicit-66",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T5-explicit-67",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T5-semi_structured-68",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T6-ambiguous-69",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T6-ambiguous-70",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S401-T1-explicit-71",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T1-explicit-72",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S403-T1-semi_structured-73",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S404-T1-semi_structured-74",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S405-T1-semi_structured-75",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T2-semi_structured-76",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T2-ambiguous-77",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T3-explicit-78",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T3-semi_structured-79",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S403-T3-semi_structured-80",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T4-ambiguous-81",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T4-ambiguous-82",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T5-semi_structured-83",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T5-semi_structured-84",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T6-ambiguous-85",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "REJECT",
+              "correct": false,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T6-ambiguous-86",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S501-T1-semi_structured-87",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T1-semi_structured-88",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T1-semi_structured-89",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S504-T1-semi_structured-90",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T2-ambiguous-91",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T2-ambiguous-92",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T2-ambiguous-93",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T3-semi_structured-94",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T3-semi_structured-95",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T4-semi_structured-96",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T4-semi_structured-97",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T4-semi_structured-98",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T5-semi_structured-99",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T5-semi_structured-100",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T6-ambiguous-101",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T6-ambiguous-102",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T6-ambiguous-103",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S601-T1-ambiguous-104",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T1-ambiguous-105",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T1-ambiguous-106",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S604-T1-ambiguous-107",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T2-ambiguous-108",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T2-ambiguous-109",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T2-ambiguous-110",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T3-semi_structured-111",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T3-semi_structured-112",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T3-semi_structured-113",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T4-semi_structured-114",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T4-semi_structured-115",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T5-semi_structured-116",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T5-semi_structured-117",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T6-semi_structured-118",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T6-semi_structured-119",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T6-semi_structured-120",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S6_Communication_limited"
+            }
+          ]
+        },
+        {
+          "seed": 46,
+          "metrics": {
+            "Acc_adm": 0.95,
+            "UAR": 0.0,
+            "ECR": 0.965,
+            "UBR": 0.947,
+            "PIR": 1.0,
+            "WSR": 1.0,
+            "CNR": 0.9574468085106383,
+            "ATR": 0.983
+          },
+          "confusion_matrix": {
+            "ACCEPT": {
+              "ACCEPT": 42,
+              "CLARIFY": 0,
+              "REJECT": 0
+            },
+            "CLARIFY": {
+              "ACCEPT": 0,
+              "CLARIFY": 45,
+              "REJECT": 4
+            },
+            "REJECT": {
+              "ACCEPT": 0,
+              "CLARIFY": 2,
+              "REJECT": 27
+            }
+          },
+          "per_sample_decisions": [
+            {
+              "sample_id": "MS-S1-T1-explicit-01",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S3-T1-explicit-02",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S5-T1-explicit-03",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S6-T1-semi_structured-04",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S2-T2-semi_structured-05",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S4-T2-semi_structured-06",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S1-T2-ambiguous-07",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S1-T3-explicit-08",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S2-T3-explicit-09",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S5-T3-semi_structured-10",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S3-T4-ambiguous-11",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S4-T4-ambiguous-12",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S6-T4-ambiguous-13",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S2-T4-semi_structured-14",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S4-T5-explicit-15",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S5-T5-explicit-16",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S6-T5-semi_structured-17",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S3-T6-ambiguous-18",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S1-T6-ambiguous-19",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S4-T6-ambiguous-20",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S101-T1-explicit-21",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T1-explicit-22",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S103-T1-explicit-23",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S104-T1-explicit-24",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T2-semi_structured-25",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T2-semi_structured-26",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T3-explicit-27",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T3-explicit-28",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T4-ambiguous-29",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T4-ambiguous-30",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S103-T4-ambiguous-31",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T5-explicit-32",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T5-explicit-33",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S103-T5-explicit-34",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S101-T6-ambiguous-35",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S102-T6-ambiguous-36",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S1_Powerline"
+            },
+            {
+              "sample_id": "MS-S201-T1-explicit-37",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T1-explicit-38",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S203-T1-explicit-39",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S204-T1-explicit-40",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S205-T1-explicit-41",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T2-semi_structured-42",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "REJECT",
+              "correct": false,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T2-semi_structured-43",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T3-explicit-44",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T3-explicit-45",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T4-ambiguous-46",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T4-ambiguous-47",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T5-explicit-48",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T5-explicit-49",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S203-T5-explicit-50",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S201-T6-ambiguous-51",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S202-T6-ambiguous-52",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S203-T6-ambiguous-53",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S2_Disaster_area"
+            },
+            {
+              "sample_id": "MS-S301-T1-explicit-54",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T1-explicit-55",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T1-explicit-56",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S304-T1-explicit-57",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T2-semi_structured-58",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T2-semi_structured-59",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T2-semi_structured-60",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T3-explicit-61",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T3-explicit-62",
+              "ground_truth": "REJECT",
+              "predicted_decision": "CLARIFY",
+              "correct": false,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T3-explicit-63",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T4-ambiguous-64",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T4-ambiguous-65",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T5-explicit-66",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T5-explicit-67",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S303-T5-semi_structured-68",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S301-T6-ambiguous-69",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S302-T6-ambiguous-70",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S3_Campus_delivery"
+            },
+            {
+              "sample_id": "MS-S401-T1-explicit-71",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T1-explicit-72",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S403-T1-semi_structured-73",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S404-T1-semi_structured-74",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S405-T1-semi_structured-75",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T2-semi_structured-76",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T2-ambiguous-77",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T3-explicit-78",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T3-semi_structured-79",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S403-T3-semi_structured-80",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T4-ambiguous-81",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T4-ambiguous-82",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T5-semi_structured-83",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T5-semi_structured-84",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S401-T6-ambiguous-85",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S402-T6-ambiguous-86",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S4_River_monitoring"
+            },
+            {
+              "sample_id": "MS-S501-T1-semi_structured-87",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T1-semi_structured-88",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T1-semi_structured-89",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S504-T1-semi_structured-90",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T2-ambiguous-91",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T2-ambiguous-92",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T2-ambiguous-93",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T3-semi_structured-94",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T3-semi_structured-95",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T4-semi_structured-96",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T4-semi_structured-97",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T4-semi_structured-98",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T5-semi_structured-99",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T5-semi_structured-100",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S501-T6-ambiguous-101",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S502-T6-ambiguous-102",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S503-T6-ambiguous-103",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S5_Bridge_inspection"
+            },
+            {
+              "sample_id": "MS-S601-T1-ambiguous-104",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T1-ambiguous-105",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T1-ambiguous-106",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S604-T1-ambiguous-107",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T1_Normal",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T2-ambiguous-108",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T2-ambiguous-109",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T2-ambiguous-110",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T2_Evidence_insufficient",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T3-semi_structured-111",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T3-semi_structured-112",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T3-semi_structured-113",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T3_Authority_conflicting",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T4-semi_structured-114",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T4-semi_structured-115",
+              "ground_truth": "REJECT",
+              "predicted_decision": "REJECT",
+              "correct": true,
+              "risk_category": "T4_LLM_assumption",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T5-semi_structured-116",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T5-semi_structured-117",
+              "ground_truth": "ACCEPT",
+              "predicted_decision": "ACCEPT",
+              "correct": true,
+              "risk_category": "T5_Backend_infeasible",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S601-T6-semi_structured-118",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S602-T6-semi_structured-119",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "CLARIFY",
+              "correct": true,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S6_Communication_limited"
+            },
+            {
+              "sample_id": "MS-S603-T6-semi_structured-120",
+              "ground_truth": "CLARIFY",
+              "predicted_decision": "REJECT",
+              "correct": false,
+              "risk_category": "T6_Consequence_ambiguous",
+              "scenario": "S6_Communication_limited"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

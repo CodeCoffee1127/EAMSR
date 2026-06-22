@@ -1,0 +1,265 @@
+{
+  "matrices": [
+    {
+      "variant": "Full_EAMSR",
+      "confusion_matrix": {
+        "predicted": [
+          "ACCEPT",
+          "CLARIFY",
+          "REJECT"
+        ],
+        "actual": [
+          "ACCEPT",
+          "CLARIFY",
+          "REJECT"
+        ],
+        "counts": [
+          [
+            42,
+            0,
+            0
+          ],
+          [
+            0,
+            45,
+            4
+          ],
+          [
+            0,
+            2,
+            27
+          ]
+        ]
+      },
+      "derived_metrics": {
+        "Acc_adm": 0.948,
+        "UAR": 0.0,
+        "PIR": 1.0
+      }
+    },
+    {
+      "variant": "Ablation_No_Evidence",
+      "confusion_matrix": {
+        "predicted": [
+          "ACCEPT",
+          "CLARIFY",
+          "REJECT"
+        ],
+        "actual": [
+          "ACCEPT",
+          "CLARIFY",
+          "REJECT"
+        ],
+        "counts": [
+          [
+            42,
+            3,
+            2
+          ],
+          [
+            0,
+            35,
+            4
+          ],
+          [
+            0,
+            9,
+            25
+          ]
+        ]
+      },
+      "derived_metrics": {
+        "Acc_adm": 0.848,
+        "UAR": 0.067,
+        "PIR": 0.95
+      }
+    },
+    {
+      "variant": "Ablation_No_Auth_Mut",
+      "confusion_matrix": {
+        "predicted": [
+          "ACCEPT",
+          "CLARIFY",
+          "REJECT"
+        ],
+        "actual": [
+          "ACCEPT",
+          "CLARIFY",
+          "REJECT"
+        ],
+        "counts": [
+          [
+            42,
+            5,
+            5
+          ],
+          [
+            0,
+            33,
+            2
+          ],
+          [
+            0,
+            8,
+            24
+          ]
+        ]
+      },
+      "derived_metrics": {
+        "Acc_adm": 0.828,
+        "UAR": 0.133,
+        "PIR": 0.824
+      }
+    },
+    {
+      "variant": "Ablation_No_USI",
+      "confusion_matrix": {
+        "predicted": [
+          "ACCEPT",
+          "CLARIFY",
+          "REJECT"
+        ],
+        "actual": [
+          "ACCEPT",
+          "CLARIFY",
+          "REJECT"
+        ],
+        "counts": [
+          [
+            42,
+            3,
+            2
+          ],
+          [
+            0,
+            39,
+            4
+          ],
+          [
+            0,
+            5,
+            25
+          ]
+        ]
+      },
+      "derived_metrics": {
+        "Acc_adm": 0.882,
+        "UAR": 0.072,
+        "PIR": 0.95
+      }
+    },
+    {
+      "variant": "Ablation_No_MCS",
+      "confusion_matrix": {
+        "predicted": [
+          "ACCEPT",
+          "CLARIFY",
+          "REJECT"
+        ],
+        "actual": [
+          "ACCEPT",
+          "CLARIFY",
+          "REJECT"
+        ],
+        "counts": [
+          [
+            42,
+            1,
+            1
+          ],
+          [
+            0,
+            40,
+            5
+          ],
+          [
+            0,
+            6,
+            25
+          ]
+        ]
+      },
+      "derived_metrics": {
+        "Acc_adm": 0.89,
+        "UAR": 0.028,
+        "PIR": 0.95
+      }
+    },
+    {
+      "variant": "Ablation_No_Backend",
+      "confusion_matrix": {
+        "predicted": [
+          "ACCEPT",
+          "CLARIFY",
+          "REJECT"
+        ],
+        "actual": [
+          "ACCEPT",
+          "CLARIFY",
+          "REJECT"
+        ],
+        "counts": [
+          [
+            42,
+            6,
+            7
+          ],
+          [
+            0,
+            33,
+            0
+          ],
+          [
+            0,
+            8,
+            24
+          ]
+        ]
+      },
+      "derived_metrics": {
+        "Acc_adm": 0.822,
+        "UAR": 0.167,
+        "PIR": 0.95
+      }
+    },
+    {
+      "variant": "Ablation_No_Audit",
+      "confusion_matrix": {
+        "predicted": [
+          "ACCEPT",
+          "CLARIFY",
+          "REJECT"
+        ],
+        "actual": [
+          "ACCEPT",
+          "CLARIFY",
+          "REJECT"
+        ],
+        "counts": [
+          [
+            42,
+            0,
+            0
+          ],
+          [
+            0,
+            43,
+            6
+          ],
+          [
+            0,
+            4,
+            25
+          ]
+        ]
+      },
+      "derived_metrics": {
+        "Acc_adm": 0.918,
+        "UAR": 0.0,
+        "PIR": 0.95
+      }
+    }
+  ],
+  "timestamp": "2026-06-15T14:37:01Z",
+  "source": "ablation_p2.json + full_eamsr_p2.json"
+}

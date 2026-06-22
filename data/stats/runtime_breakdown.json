@@ -1,0 +1,51 @@
+{
+  "method": "Full_EAMSR",
+  "unit": "seconds",
+  "source": "full_eamsr_p2.json",
+  "timestamp": "2026-06-15T22:37:40Z",
+  "breakdown": {
+    "llm_candidate_generation": {
+      "mean": 4.0,
+      "max": 5.6,
+      "min": 3.7
+    },
+    "po_gate_and_evidence": {
+      "mean": 1.5,
+      "max": 2.0,
+      "min": 1.4
+    },
+    "backend_witness": {
+      "mean": 2.1,
+      "max": 2.9,
+      "min": 1.7
+    },
+    "refinement_and_screening": {
+      "mean": 0.9,
+      "max": 1.2,
+      "min": 0.8
+    },
+    "audit_trail_generation": {
+      "mean": 0.1,
+      "max": 0.1,
+      "min": 0.1
+    },
+    "total": {
+      "mean": 8.6,
+      "max": 11.7,
+      "min": 5.6
+    }
+  },
+  "budget_observation": {
+    "max_candidates_used": 5,
+    "max_refinements_used": 3,
+    "budget_exceeded_count": 0,
+    "note": "All 120 tasks completed within Bc + Br budget"
+  },
+  "component_percentages": {
+    "llm_candidate_generation": "47%",
+    "po_gate_and_evidence": "18%",
+    "backend_witness": "24%",
+    "refinement_and_screening": "10%",
+    "audit_trail_generation": "1%"
+  }
+}

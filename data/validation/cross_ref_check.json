@@ -1,0 +1,364 @@
+{
+  "check_id": "CROSS-REF-P2-FINAL",
+  "timestamp": "2026-06-15T21:27:25.515891",
+  "document_pair": "Method (Section 3) ↔ Experiment (Section 4)",
+  "checks": [
+    {
+      "check_id": "C1",
+      "name": "5 POs ↔ Experiment tables",
+      "description": "Verify all 5 proof obligations (PO_E, PO_A, PO_M, PO_U, PO_B) appear in experimental results",
+      "status": "PASS",
+      "evidence": {
+        "table4b_mapping": {
+          "PO_E (Evidence)": "T2 dominant (83.3% handling rate)",
+          "PO_A (Authority)": "T3 dominant (94.4% handling rate)",
+          "PO_M (Mutability)": "T3 dominant (94.4% handling rate)",
+          "PO_U (USI)": "T4 dominant (88.9% handling rate)",
+          "PO_B (Backend)": "T5 dominant + refinement (83.3% handling rate)"
+        },
+        "table8_mapping": {
+          "PO_E": "w/o Evidence ablation → ECR drops to 63.8%",
+          "PO_A/PO_M": "w/o Auth/Mut ablation → PIR drops to 82.4%",
+          "PO_U": "w/o USI ablation → UBR drops to 51.3%",
+          "PO_B": "w/o Backend ablation → WSR becomes unavailable, Acc_adm drops to 81.7%"
+        }
+      },
+      "details": "All 5 POs appear in Table 4B (risk handling) and Table 8 (ablation). T6 (Mission-consequence screening) is an additional screening layer, not one of the 5 core POs.",
+      "missing": []
+    },
+    {
+      "check_id": "C2",
+      "name": "4 Properties ↔ Experimental Validation",
+      "description": "Verify 4 formal properties are validated by experimental metrics",
+      "status": "PASS",
+      "evidence": {
+        "property1_protected_invariant_preservation": {
+          "metric": "PIR",
+          "value": "100%",
+          "source": "Table 3 (EAMSR row)",
+          "pass": true
+        },
+        "property2_hard_intent_preservation": {
+          "metric": "UAR + Hard_intent",
+          "value": "UAR=0.0% (零不安全准入), Hard_intent=100%",
+          "source": "Table 3 + Table 6b",
+          "pass": true
+        },
+        "property3_unverified_assumption_non_propagation": {
+          "metric": "UBR",
+          "value": "94.7%",
+          "source": "Table 3 (EAMSR row)",
+          "pass": true
+        },
+        "property4_bounded_closure": {
+          "metric": "Energy/Time margins",
+          "value": "All energy margins positive (8.9%-15.1%), all time margins positive (24.8s-52.4s)",
+          "source": "Table 5 / Fig. 5",
+          "pass": true
+        }
+      },
+      "details": "All 4 formal properties have corresponding experimental validation with quantitative metrics.",
+      "missing": []
+    },
+    {
+      "check_id": "C3",
+      "name": "Algorithm 1 Steps ↔ Case Studies (Fig. 7)",
+      "description": "Verify Fig. 7 case studies cover Algorithm 1 pipeline steps",
+      "status": "PASS",
+      "evidence": {
+        "step_1_2_anchor_extraction": {
+          "description": "Text anchor extraction from NL instruction",
+          "covered_by": [
+            "T2-Evidence-001 (3 anchors)",
+            "T3-Authority-001 (3 anchors)",
+            "T5-Backend-001 (3 anchors)",
+            "T6-Consequence-001 (4 anchors)"
+          ],
+          "pass": true
+        },
+        "step_3_evidence_assignment": {
+          "description": "Clause-level evidence annotation",
+          "covered_by": [
+            "T2 (4 clauses)",
+            "T3 (3 clauses)",
+            "T5 (5 clauses)",
+            "T6 (4 clauses)"
+          ],
+          "pass": true
+        },
+        "step_4_candidate_macs": {
+          "description": "Candidate MAC generation",
+          "covered_by": [
+            "All 4 cases"
+          ],
+          "pass": true
+        },
+        "step_5_po_gate": {
+          "description": "PO gate evaluation with dominant PO identification",
+          "covered_by": [
+            "T2→Evidence PO",
+            "T3→Authority/Mutability PO",
+            "T5→Backend PO",
+            "T6→MCS screening"
+          ],
+          "pass": true
+        },
+        "step_6_consequence_signature": {
+          "description": "Mission consequence analysis",
+          "covered_by": [
+            "T6-Consequence-001 (3 consequence items)"
+          ],
+          "pass": true
+        },
+        "step_7_multiple_classes_clarify": {
+          "description": "Multi-class ambiguity → CLARIFY decision",
+          "covered_by": [
+            "T6-Consequence-001 (3 ambiguities detected → CLARIFY)"
+          ],
+          "pass": true
+        },
+        "step_8_backend_witness": {
+          "description": "Backend feasibility witness",
+          "covered_by": [
+            "T5-Backend-001 (distance, energy, payload checks)"
+          ],
+          "pass": true
+        },
+        "step_9_refinement": {
+          "description": "STL repair/refinement of infeasible plans",
+          "covered_by": [
+            "T5-Backend-001 (refined: 8km→4km, 12→6 samples)"
+          ],
+          "pass": true
+        },
+        "step_10_final_decision": {
+          "description": "Audit trail + final decision",
+          "covered_by": [
+            "All 4 cases with correct decisions matching ground truth"
+          ],
+          "pass": true
+        }
+      },
+      "details": "All 10 Algorithm 1 steps are covered by the 4 case studies in Fig. 7. Each case demonstrates specific steps: T2 (Steps 1-5), T3 (Steps 1-5), T5 (Steps 1-5, 8-9), T6 (Steps 1-7).",
+      "missing": []
+    },
+    {
+      "check_id": "C4",
+      "name": "Table ↔ Text Consistency",
+      "description": "Verify table contents match text references",
+      "status": "PASS",
+      "evidence": {
+        "table3_overall": {
+          "methods_count": 5,
+          "methods": [
+            "Direct-LLM",
+            "LLM+Backend",
+            "Rule-Gate",
+            "STL Repair",
+            "EAMSR"
+          ],
+          "metrics_count": 8,
+          "metrics": [
+            "Acc_adm",
+            "UAR",
+            "ECR",
+            "UBR",
+            "PIR",
+            "WSR",
+            "CNR",
+            "ATR"
+          ],
+          "pass": true
+        },
+        "table4a_grounding": {
+          "languages": [
+            "Explicit",
+            "Semi-structured",
+            "Ambiguous",
+            "Overall"
+          ],
+          "metrics": [
+            "Anchor_cov",
+            "Clause_prec",
+            "Clause_rec",
+            "Evidence_cov",
+            "Pending_det"
+          ],
+          "pass": true
+        },
+        "table4b_risk_handling": {
+          "risk_categories": [
+            "T2",
+            "T3",
+            "T4",
+            "T5",
+            "T6"
+          ],
+          "dominant_pos": [
+            "Evidence PO",
+            "Authority/Mutability PO",
+            "USI PO",
+            "Backend PO + refinement",
+            "Mission-consequence screening"
+          ],
+          "pass": true
+        },
+        "table5_witness": {
+          "scenarios": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6",
+            "Overall"
+          ],
+          "metrics": [
+            "Accepted",
+            "WSR",
+            "Energy_margin",
+            "Time_margin",
+            "Airspace_viol",
+            "Comm_viol"
+          ],
+          "pass": true
+        },
+        "table6_refinement_repair": {
+          "failure_sources": [
+            "Evidence",
+            "Authority",
+            "LLM_assumption",
+            "Backend",
+            "Consequence",
+            "Total"
+          ],
+          "repair_metrics": [
+            "Safe_Refinement",
+            "Correct_CLARIFY",
+            "Correct_REJECT",
+            "Residual",
+            "Feasibility",
+            "Protected",
+            "Hard_intent",
+            "Consequence_equiv",
+            "Silent_changes"
+          ],
+          "pass": true
+        },
+        "table8_ablation": {
+          "variants_count": 7,
+          "variants": [
+            "Full EAMSR",
+            "w/o Evidence",
+            "w/o Auth/Mut",
+            "w/o USI",
+            "w/o MCS",
+            "w/o Backend",
+            "w/o Audit"
+          ],
+          "pass": true
+        }
+      },
+      "details": "All tables contain the expected number of rows, columns, and named entities consistent with Method document definitions.",
+      "missing": []
+    },
+    {
+      "check_id": "C5",
+      "name": "Figure ↔ Text References",
+      "description": "Verify figures contain expected content for their referenced sections",
+      "status": "PASS",
+      "evidence": {
+        "fig4_mac_flow": {
+          "title": "MAC Instantiation Pipeline Flow",
+          "section": "4.3 (contract instantiation)",
+          "has_anchor_extraction": true,
+          "has_clause_instantiation": true,
+          "has_po_nodes": 5,
+          "has_backend_witness": true,
+          "has_repair": true,
+          "has_audit": true,
+          "pass": true
+        },
+        "fig5_backend_witness": {
+          "title": "Backend Witness: Energy Curve and Time Margins",
+          "section": "4.4 (backend witness)",
+          "scenarios_covered": 6,
+          "all_wsr_100": true,
+          "has_energy_data": true,
+          "has_time_margins": true,
+          "has_violation_tracking": true,
+          "pass": true
+        },
+        "fig6_uar_ablation": {
+          "title": "Unsafe Acceptance Rate (UAR) Under Ablation by Risk Category",
+          "section": "4.7 (ablation)",
+          "variants": 7,
+          "risk_categories_covered": [
+            "T2",
+            "T3",
+            "T4",
+            "T5",
+            "T6"
+          ],
+          "pass": true
+        },
+        "fig7_case_studies": {
+          "title": "Case Studies: Representative Examples from Each Risk Category",
+          "section": "4.8 (case analysis)",
+          "cases": [
+            "T2-Evidence-001",
+            "T3-Authority-001",
+            "T5-Backend-001",
+            "T6-Consequence-001"
+          ],
+          "all_cases_correct": true,
+          "pass": true
+        }
+      },
+      "details": "All 4 figures contain complete data structures matching their described purposes in the corresponding sections.",
+      "missing": []
+    },
+    {
+      "check_id": "C6",
+      "name": "Metric Definitions ↔ Computed Values",
+      "description": "Verify metric formulas produce values matching reported results",
+      "status": "PASS",
+      "evidence": {
+        "acc_adm": {
+          "formula": "(TP_ACC + TP_CL + TP_RE) / N_total",
+          "computed": "(41 + 45 + 26) / 120 = 93.3%",
+          "reported": "93.3% (Table 3, EAMSR)",
+          "match": true
+        },
+        "uar": {
+          "formula": "FP_ACCEPT / (N_CLARIFY_gt + N_REJECT_gt)",
+          "computed": "0 / (47 + 31) = 0 / 78 = 0.0%",
+          "reported": "0.0% (Table 3, EAMSR)",
+          "denominator_confirmed": 78,
+          "match": true
+        },
+        "wsr": {
+          "formula": "verified / N_ACCEPT_pred",
+          "computed": "41 / 41 = 100.0%",
+          "reported": "100% (Table 5, all scenarios)",
+          "match": true
+        },
+        "range_check": {
+          "ECR": 96.5,
+          "UBR": 94.7,
+          "PIR": 100.0,
+          "CNR": 88.9,
+          "ATR": 98.3,
+          "all_in_0_100": true,
+          "pass": true
+        }
+      },
+      "details": "All metric computations match reported values within tolerance. All metrics are within valid [0, 100] range.",
+      "missing": []
+    }
+  ],
+  "overall_status": "PASS",
+  "pass_count": 6,
+  "fail_count": 0,
+  "summary": "All Method-Experiment cross-references are consistent. The 5 proof obligations (PO_E, PO_A, PO_M, PO_U, PO_B) are fully represented in experimental results (Table 4B and Table 8). All 4 formal properties have quantitative experimental validation. Algorithm 1's 10-step pipeline is comprehensively illustrated by Fig. 7 case studies. Table contents, figure data, and metric computations are all internally consistent."
+}

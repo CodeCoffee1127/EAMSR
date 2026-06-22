@@ -1,0 +1,180 @@
+{
+  "manifest_id": "P2-MANIFEST-20260615",
+  "phase": "P2",
+  "timestamp": "2026-06-15T21:06:37.489379",
+  "description": "EAMSR P2 Full-Scale Extension - Complete Deliverables",
+  "files": [
+    {
+      "path": "/mnt/agents/output/l1_calibration_report.json",
+      "filename": "l1_calibration_report.json",
+      "size_bytes": 3841,
+      "sha256": "3feb1b65b9692ab80e18d5157d1f4308bd8065292f9dd8c1be3599ecbc11ae44",
+      "modified": "2026-06-15T20:13:40"
+    },
+    {
+      "path": "/mnt/agents/output/dataset_p2.jsonl",
+      "filename": "dataset_p2.jsonl",
+      "size_bytes": 582847,
+      "sha256": "3702cf3a6b2f4df323aba610c84ec8d7d5aabd5ee23cd6a755b9d3c573843d8a",
+      "modified": "2026-06-15T20:06:16"
+    },
+    {
+      "path": "/mnt/agents/output/annotations_p2.json",
+      "filename": "annotations_p2.json",
+      "size_bytes": 161622,
+      "sha256": "6e468ef7bb6cde444029420d446406075f485f985442e2d78c0a41c78ba99a46",
+      "modified": "2026-06-15T20:06:25"
+    },
+    {
+      "path": "/mnt/agents/output/full_eamsr_p2.json",
+      "filename": "full_eamsr_p2.json",
+      "size_bytes": 188324,
+      "sha256": "2845d3ebfee95890d9c9b800f76bebae44de7d492db66a8ef1fd33bdba000fe5",
+      "modified": "2026-06-15T20:23:28"
+    },
+    {
+      "path": "/mnt/agents/output/baseline_p2.json",
+      "filename": "baseline_p2.json",
+      "size_bytes": 754063,
+      "sha256": "41bcdee4aff13abe4c556ee00a78315b24d97400012362becdb71e4c5ca34068",
+      "modified": "2026-06-15T20:23:28"
+    },
+    {
+      "path": "/mnt/agents/output/ablation_p2.json",
+      "filename": "ablation_p2.json",
+      "size_bytes": 1129930,
+      "sha256": "f09c6dd655d44dc39713fa8e81d48d5b9aba7ffc0177d5b99868bbaf541a64b2",
+      "modified": "2026-06-15T20:23:28"
+    },
+    {
+      "path": "/mnt/agents/output/l2_validation_p2.json",
+      "filename": "l2_validation_p2.json",
+      "size_bytes": 5726,
+      "sha256": "487e55beb32835e8d356d326c0879cb38dfcd07e0810d4d04e05d7c410254bb3",
+      "modified": "2026-06-15T20:41:56"
+    },
+    {
+      "path": "/mnt/agents/output/audit_p2.json",
+      "filename": "audit_p2.json",
+      "size_bytes": 49325,
+      "sha256": "44c0a86e681c7d0b40825fe2bc25409648af31794f6e9a72d32838a8b14cbfc9",
+      "modified": "2026-06-15T20:32:29"
+    },
+    {
+      "path": "/mnt/agents/output/consistency_check.json",
+      "filename": "consistency_check.json",
+      "size_bytes": 8098,
+      "sha256": "8143a0de6678c3e16a1e26ad164a6346a16fb227da246c96685e11033fe1c4b9",
+      "modified": "2026-06-15T20:32:29"
+    },
+    {
+      "path": "/mnt/agents/output/p2_summary_report.md",
+      "filename": "p2_summary_report.md",
+      "size_bytes": 4860,
+      "sha256": "d451a07c69019b33b2c3e09175874bcb93ff73402e7ef51e6b5ef77c0819874a",
+      "modified": "2026-06-15T21:03:49"
+    },
+    {
+      "path": "/mnt/agents/output/paper_data/table2_dataset.csv",
+      "filename": "table2_dataset.csv",
+      "size_bytes": 309,
+      "sha256": "9d7d2ed0dd11464bf3d4087af78e63bc409ce09f6c685df287425961eec4c400",
+      "modified": "2026-06-15T20:28:02"
+    },
+    {
+      "path": "/mnt/agents/output/paper_data/table3_overall.csv",
+      "filename": "table3_overall.csv",
+      "size_bytes": 360,
+      "sha256": "174c7e8b90e287b6044dfa819b1f2d0629d491117e35a964265825f19217ac15",
+      "modified": "2026-06-15T20:28:02"
+    },
+    {
+      "path": "/mnt/agents/output/paper_data/table4a_grounding.csv",
+      "filename": "table4a_grounding.csv",
+      "size_bytes": 251,
+      "sha256": "465865d65f09ebac421d2cc1336a5a9b87719157e3b2391090eeb210a5f14714",
+      "modified": "2026-06-15T20:28:02"
+    },
+    {
+      "path": "/mnt/agents/output/paper_data/table4b_risk_handling.csv",
+      "filename": "table4b_risk_handling.csv",
+      "size_bytes": 220,
+      "sha256": "7f64749322cad64e1128458d34ce5355b7ff2a9c9f843036b7c990426c34680b",
+      "modified": "2026-06-15T20:28:02"
+    },
+    {
+      "path": "/mnt/agents/output/paper_data/table5_witness.csv",
+      "filename": "table5_witness.csv",
+      "size_bytes": 281,
+      "sha256": "62041798b3b8f3042055d31bffb8de80b64961f55212de49322a873c8d567782",
+      "modified": "2026-06-15T20:28:02"
+    },
+    {
+      "path": "/mnt/agents/output/paper_data/table6a_refinement.csv",
+      "filename": "table6a_refinement.csv",
+      "size_bytes": 229,
+      "sha256": "cf18f917615e8fa7063ea43215d5b291c7fb54e252e43ec3c74d8d5d5755e0d4",
+      "modified": "2026-06-15T20:28:02"
+    },
+    {
+      "path": "/mnt/agents/output/paper_data/table6b_repair.csv",
+      "filename": "table6b_repair.csv",
+      "size_bytes": 165,
+      "sha256": "cbff4b07372759698de3e5fe6c8e6e565bb6e6ac05ca7283f37880f9c20cfb53",
+      "modified": "2026-06-15T20:28:02"
+    },
+    {
+      "path": "/mnt/agents/output/paper_data/table8_ablation.csv",
+      "filename": "table8_ablation.csv",
+      "size_bytes": 359,
+      "sha256": "1f8bd1cc15a86b98dd50d48f7bb7e5dd7c1ec88e0806f63034e356c73fff9277",
+      "modified": "2026-06-15T20:28:02"
+    },
+    {
+      "path": "/mnt/agents/output/paper_data/fig4_mac_flow.json",
+      "filename": "fig4_mac_flow.json",
+      "size_bytes": 3664,
+      "sha256": "55ac1ad4bf0028a85d30b76500b0d6f7db53700eed4e68f2be6d3c5e80c7196a",
+      "modified": "2026-06-15T20:29:52"
+    },
+    {
+      "path": "/mnt/agents/output/paper_data/fig5_witness.json",
+      "filename": "fig5_witness.json",
+      "size_bytes": 2890,
+      "sha256": "5d960f2a1b409b88a2ae6e94f0fb730b18743e13f35ea148ef7c5c747de1e878",
+      "modified": "2026-06-15T20:29:52"
+    },
+    {
+      "path": "/mnt/agents/output/paper_data/fig6_uar_ablation.json",
+      "filename": "fig6_uar_ablation.json",
+      "size_bytes": 3246,
+      "sha256": "60a6507034c6245d7c7579c2aa114800232e440dbd24db186bff8548c7cd7472",
+      "modified": "2026-06-15T20:29:52"
+    },
+    {
+      "path": "/mnt/agents/output/paper_data/fig7_cases.json",
+      "filename": "fig7_cases.json",
+      "size_bytes": 10221,
+      "sha256": "56500c30d5d8579a0efda1627830d4392d145f76cd6d8af1c00d13f3b5276c7e",
+      "modified": "2026-06-15T20:29:52"
+    },
+    {
+      "path": "/mnt/agents/output/paper_data/fig_confusion.json",
+      "filename": "fig_confusion.json",
+      "size_bytes": 5480,
+      "sha256": "a2ee466adda4c780c01c3d38491a236a9f13248b2bedc95af81d92e5e295cdfa",
+      "modified": "2026-06-15T20:31:51"
+    },
+    {
+      "path": "/mnt/agents/output/p2_manifest.json",
+      "filename": "p2_manifest.json",
+      "size_bytes": 6400,
+      "sha256": "e63ac8f5538131e1ca6a3483f65f62794c7f1704442b090337e18d95a356c2d3",
+      "modified": "2026-06-15T21:06:38"
+    }
+  ],
+  "statistics": {
+    "total_files": 24,
+    "total_size_bytes": 2922711
+  }
+}

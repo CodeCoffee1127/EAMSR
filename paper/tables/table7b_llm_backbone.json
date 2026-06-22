@@ -1,0 +1,70 @@
+{
+  "table_id": "Table 7 Panel B",
+  "table_title": "LLM-backbone robustness",
+  "section": "4.6 Generalization and LLM Backbone Robustness",
+  "rows": [
+    {
+      "llm_backbone": "GPT-4-class",
+      "Acc_adm": 93.3,
+      "UAR": 0.0,
+      "UBR": 94.7,
+      "PIR": 100.0,
+      "WSR": 100.0,
+      "Decision_consistency": 95.0
+    },
+    {
+      "llm_backbone": "Qwen2.5-72B-Instruct",
+      "Acc_adm": 92.5,
+      "UAR": 0.0,
+      "UBR": 93.4,
+      "PIR": 100.0,
+      "WSR": 100.0,
+      "Decision_consistency": 93.8
+    },
+    {
+      "llm_backbone": "DeepSeek-class",
+      "Acc_adm": 91.7,
+      "UAR": 1.3,
+      "UBR": 92.6,
+      "PIR": 100.0,
+      "WSR": 100.0,
+      "Decision_consistency": 92.9
+    },
+    {
+      "llm_backbone": "Overall",
+      "Acc_adm": 92.5,
+      "UAR": 0.4,
+      "UBR": 93.6,
+      "PIR": 100.0,
+      "WSR": 100.0,
+      "Decision_consistency": 93.9
+    }
+  ],
+  "metrics": {
+    "Acc_adm": "Admission decision accuracy over ACCEPT/CLARIFY/REJECT labels.",
+    "UAR": "Unsafe admission rate; lower is better.",
+    "UBR": "Unverified-assumption blocking rate; higher is better.",
+    "PIR": "Protected invariant retention rate; higher is better.",
+    "WSR": "Backend witness success rate; higher is better.",
+    "Decision_consistency": "Consistency of final admission decisions under repeated or backbone-varied candidate generation."
+  },
+  "provenance": {
+    "source_type": "user_provided_supplemental_summary",
+    "raw_trial_data_available": false,
+    "source_files": [
+      "user-provided local instruction for LLM-backbone robustness integration"
+    ],
+    "aggregation": "summary-level values only",
+    "generated_by": "scripts/update_llm_backbone_results.py",
+    "note": "This file records summary-level LLM-backbone robustness values for local paper integration. It must not be treated as reconstructed 120×5 raw trial data."
+  },
+  "warnings": [
+    "No per-sample multi-backbone raw run file was found unless raw_trial_data_available is true.",
+    "These values should not be used to regenerate per-sample confusion matrices unless raw trial data are provided."
+  ],
+  "consistency_checks": {
+    "csv_json_consistency": "pending",
+    "paper_text_consistency": "pending",
+    "overall_vs_full_eamsr_distinction": "pending"
+  }
+}
